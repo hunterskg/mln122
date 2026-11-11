@@ -1,100 +1,110 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { BookOpen, DollarSign, Truck, Users, LineChart, ShieldAlert, GraduationCap, X } from 'lucide-react';
+import {
+  BookOpen,
+  Sparkles,
+  Heart,
+  Scale,
+  Brain,
+  Users,
+  Compass,
+  X,
+} from 'lucide-react';
 
 export function TutorialModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in">
-      <Card className="max-w-2xl w-full max-h-[85vh] overflow-y-auto bg-slate-900 border-slate-700 shadow-2xl">
-        <CardHeader className="border-b border-slate-800 pb-3 flex flex-row items-center justify-between sticky top-0 bg-slate-900 z-10">
+    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in">
+      <Card className="max-w-2xl w-full max-h-[85vh] overflow-y-auto bg-paper-2 border-rule shadow-2xl">
+        <CardHeader className="border-b border-rule-subtle pb-3 flex flex-row items-center justify-between sticky top-0 bg-paper-2 z-10">
           <div className="flex items-center gap-2">
-            <BookOpen className="w-5 h-5 text-emerald-400" />
-            <CardTitle className="text-base text-slate-100 font-black">Cẩm nang Khởi sự Doanh nghiệp & Quy luật Kinh tế</CardTitle>
+            <BookOpen className="w-5 h-5 text-amber-400" />
+            <CardTitle className="text-base sm:text-lg text-ink font-normal font-display">
+              Giới thiệu & Triết lý Trò chơi: Nhịp Đời
+            </CardTitle>
           </div>
           <button
             onClick={onClose}
-            className="p-1 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition"
+            className="p-1 rounded-lg text-muted hover:text-ink hover:bg-paper-3 transition"
           >
             <X className="w-5 h-5" />
           </button>
         </CardHeader>
 
-        <CardContent className="space-y-4 pt-4 text-xs text-slate-300 leading-relaxed">
-          <div className="p-3 bg-emerald-950/20 border border-emerald-500/30 rounded-xl space-y-1">
-            <div className="font-bold text-emerald-300">Mục tiêu Chiến lược</div>
-            <div>
-              Dẫn dắt doanh nghiệp phát triển từ số không đến vị thế dẫn đầu thị trường trong 36 tháng vận hành. Tích lũy tư bản, làm chủ quy luật giá trị và bảo đảm dòng tiền thanh khoản an toàn.
+        <CardContent className="space-y-4 pt-4 text-xs text-ink-2 leading-relaxed font-sans">
+          {/* Core Concept */}
+          <div className="p-3.5 bg-amber-500/10 border border-amber-500/25 rounded-xl space-y-1.5">
+            <div className="font-bold text-amber-300 flex items-center gap-1.5 text-xs">
+              <Sparkles className="w-4 h-4 text-amber-400" />
+              <span>Luận đề sinh kế cốt lõi</span>
+            </div>
+            <div className="text-ink leading-relaxed font-body text-[13px]">
+              Điều kiện sinh tồn vật chất và vị trí trong quan hệ sản xuất quy định sâu sắc các lựa chọn của mỗi con người. Mọi quyết định phân bổ thời gian, sức lao động và tích lũy đều mang tính đánh đổi tất yếu giữa lợi ích vật chất trước mắt và giá trị nhân bản lâu dài.
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div className="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-1">
-              <div className="font-bold text-slate-100 flex items-center gap-1.5">
-                <DollarSign className="w-4 h-4 text-emerald-400" />
-                <span>Kế toán dồn tích & Dòng tiền thực tế</span>
+            <div className="p-3 bg-paper rounded-xl border border-rule-subtle space-y-1">
+              <div className="font-bold text-ink flex items-center gap-1.5">
+                <Compass className="w-4 h-4 text-amber-400" />
+                <span>Lá thăm cuộc đời (Lottery of Birth)</span>
               </div>
-              <p className="text-slate-400">
-                Doanh thu dồn tích ghi nhận khi hàng được giao, nhưng dòng tiền thực tế phụ thuộc mô hình lưu thông. Trong mô hình B2B, 70% giá trị bán hàng bị giam lỏng dưới dạng khoản phải thu Net-30. Cần giám sát chặt chẽ số tháng dự phòng tiền mặt.
+              <p className="text-muted">
+                Không ai được tự chọn nơi mình sinh ra. Bạn sẽ khởi đầu ngẫu nhiên từ nông thôn nghèo, gia đình công nhân đô thị hay hộ buôn bán nhỏ ở các vùng miền trên khắp Việt Nam.
               </p>
             </div>
 
-            <div className="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-1">
-              <div className="font-bold text-slate-100 flex items-center gap-1.5">
-                <Truck className="w-4 h-4 text-sky-400" />
-                <span>Chuỗi cung ứng & Xuất kho FIFO</span>
+            <div className="p-3 bg-paper rounded-xl border border-rule-subtle space-y-1">
+              <div className="font-bold text-ink flex items-center gap-1.5">
+                <Scale className="w-4 h-4 text-sky-400" />
+                <span>Không có lựa chọn "đúng tuyệt đối"</span>
               </div>
-              <p className="text-slate-400">
-                Nhà cung ứng có thời gian vận chuyển (0 đến 2 tháng) và tỷ lệ giao hàng đúng hẹn khác nhau. Hàng xuất kho tuân thủ nguyên tắc FIFO (nhập trước xuất trước). Cháy hàng thiếu cung làm tổn hại uy tín và sự hài lòng của khách hàng.
+              <p className="text-muted">
+                Mọi ngã rẽ đều có cái giá: Cày cuốc tăng ca giúp ví tiền đầy hơn nhưng hao mòn sức khỏe sinh học; giữ gìn cơ thể thì tích lũy mỏng; dốc lòng vì gia đình thì đôi khi phải gác lại ước mơ riêng.
               </p>
             </div>
 
-            <div className="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-1">
-              <div className="font-bold text-slate-100 flex items-center gap-1.5">
+            <div className="p-3 bg-paper rounded-xl border border-rule-subtle space-y-1">
+              <div className="font-bold text-ink flex items-center gap-1.5">
+                <Heart className="w-4 h-4 text-rose-400" />
+                <span>Giới hạn sinh học & Hao mòn thể lực</span>
+              </div>
+              <p className="text-muted">
+                Sức lao động không phải là vô tận. Nếu để sức khỏe chạm đáy, nhân vật có thể kiệt sức hoặc kết thúc cuộc đời sớm trước tuổi già.
+              </p>
+            </div>
+
+            <div className="p-3 bg-paper rounded-xl border border-rule-subtle space-y-1">
+              <div className="font-bold text-ink flex items-center gap-1.5">
                 <Users className="w-4 h-4 text-indigo-400" />
-                <span>Sức lao động & Năng suất (v)</span>
+                <span>Ký ức & Dòng chảy hệ quả</span>
               </div>
-              <p className="text-slate-400">
-                Lao động vận hành quyết định giới hạn công suất đóng gói và xuất xưởng. Lao động bán hàng mở rộng khách hàng mới. Lao động CSKH giảm tỷ lệ rời bỏ. Ép công nhân tăng ca vượt 125% công suất làm cạn kiệt sức lao động và gây làn sóng thôi việc.
-              </p>
-            </div>
-
-            <div className="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-1">
-              <div className="font-bold text-slate-100 flex items-center gap-1.5">
-                <LineChart className="w-4 h-4 text-amber-400" />
-                <span>Thị trường, Cung - Cầu & Giá trị</span>
-              </div>
-              <p className="text-slate-400">
-                Cầu thị trường co giãn theo tương quan giữa giá bán của bạn với giá đối thủ. Định giá cao mở rộng biên lợi nhuận nhưng giảm cầu tự nhiên. Chi phí tiếp thị thuộc chi phí lưu thông thuần túy và chịu quy luật lợi suất giảm dần.
+              <p className="text-muted">
+                Các quyết định trong quá khứ không biến mất. Chúng để lại các dấu ấn ký ức, kích hoạt những cảnh đời về sau: sự tương trợ của anh em hay bẫy tín dụng nợ nần.
               </p>
             </div>
           </div>
 
-          <div className="p-3 bg-indigo-950/20 border border-indigo-600/30 rounded-xl space-y-1">
-            <div className="font-bold text-indigo-300 flex items-center gap-1.5">
-              <GraduationCap className="w-4 h-4 text-indigo-400" />
-              <span>50 Tình huống Kinh tế Mác - Lênin</span>
+          <div className="p-3.5 bg-paper border border-rule-subtle rounded-xl space-y-1.5">
+            <div className="font-bold text-amber-300 flex items-center gap-1.5 text-xs">
+              <Brain className="w-4 h-4 text-amber-400" />
+              <span>Góc nhìn Kinh tế chính trị Mác - Lênin</span>
             </div>
-            <div className="text-slate-400">
-              Mỗi tháng, các tình huống điều hành gắn liền với Giáo trình Kinh tế chính trị Mác - Lênin sẽ phát sinh. Mỗi quyết định đều có tính hai mặt (trade-off) giữa lợi nhuận ngắn hạn, sức lao động và sự phát triển bền vững của tư bản.
-            </div>
-          </div>
-
-          <div className="p-3 bg-amber-950/20 border border-amber-600/30 rounded-xl space-y-1">
-            <div className="font-bold text-amber-300 flex items-center gap-1.5">
-              <ShieldAlert className="w-4 h-4 text-amber-400" />
-              <span>Khả năng thanh toán & Tự động rút thấu chi</span>
-            </div>
-            <div>
-              Nếu số dư tiền mặt rơi vào âm, ngân hàng sẽ tự động trích vốn vay từ hạn mức tín dụng thấu chi còn lại. Nếu hạn mức cạn kiệt và tiền mặt tiếp tục âm trong 2 tháng liên tiếp, doanh nghiệp sẽ bị tuyên bố phá sản và thanh lý tài sản.
+            <div className="text-ink-2 leading-relaxed text-[13px]">
+              Trò chơi không giáo điều hay phán xét đạo đức. Cuối mỗi cuộc đời, hệ thống sẽ mở ra tấm gương đúc kết, giúp bạn chiêm nghiệm lại những lát cắt nhân sinh và nhận ra các quy luật kinh tế chính trị đang vận hành thầm lặng dưới từng lựa chọn thường nhật.
             </div>
           </div>
 
           <div className="pt-2 flex justify-end">
-            <Button size="md" variant="primary" onClick={onClose} className="w-full sm:w-auto">
-              Đã hiểu, Bắt đầu Vận hành Doanh nghiệp
+            <Button
+              size="md"
+              variant="primary"
+              onClick={onClose}
+              className="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-black font-bold border-none"
+            >
+              Đã hiểu, Bắt đầu khám phá Cuộc đời
             </Button>
           </div>
         </CardContent>

@@ -1,0 +1,63 @@
+/* Hallmark · genre: editorial · theme: vietnamese-life-v2 · macrostructure: Workbench */
+:root {
+  /* Paper & Surfaces (Dark Lacquer / Sơn mài ấm, không dùng màu đen phẳng #000) */
+  --color-paper:       oklch(15% 0.012 45);
+  --color-paper-2:     oklch(19% 0.015 45);
+  --color-paper-3:     oklch(24% 0.018 45);
+  --color-rule:        oklch(30% 0.015 45);
+  --color-rule-subtle: oklch(24% 0.012 45);
+
+  /* Ink & Typography (Parchment white / Giấy điệp ngà) */
+  --color-ink:         oklch(94% 0.008 60);
+  --color-ink-2:       oklch(82% 0.010 60);
+  --color-muted:       oklch(65% 0.012 55);
+
+  /* Accents & Functional Indicators */
+  --color-accent:      oklch(72% 0.16 75);   /* Warm Amber / Hổ phách */
+  --color-accent-ink:  oklch(18% 0.02 75);
+  --color-jade:        oklch(74% 0.16 150);  /* Sinh kế / Tiền bạc */
+  --color-crimson:     oklch(62% 0.20 28);   /* Sinh lực / Cảnh báo */
+  --color-spirit:      oklch(70% 0.15 260);  /* Tinh thần / Trí tuệ */
+  --color-kinship:     oklch(72% 0.14 210);  /* Tình thân / Họ hàng */
+  --color-focus:       oklch(75% 0.17 75);
+
+  /* Typography Stacks (Vietnamese-safe) */
+  --font-display:      "Newsreader", "Be Vietnam Pro", "Times New Roman", serif;
+  --font-body:         "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:         "JetBrains Mono", "Be Vietnam Pro", ui-monospace, monospace;
+
+  /* 4pt Spacing Scale */
+  --space-3xs: 0.25rem;  /* 4px */
+  --space-2xs: 0.5rem;   /* 8px */
+  --space-xs:  0.75rem;  /* 12px */
+  --space-sm:  1rem;     /* 16px */
+  --space-md:  1.5rem;   /* 24px */
+  --space-lg:  2rem;     /* 32px */
+  --space-xl:  3rem;     /* 48px */
+  --space-2xl: 4.5rem;   /* 72px */
+
+  /* Text Scale */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-md:   1.125rem;
+  --text-lg:   1.375rem;
+  --text-xl:   1.75rem;
+  --text-2xl:  2.25rem;
+  --text-display: clamp(1.8rem, 3.5vw + 1rem, 2.75rem);
+
+  /* Easings & Durations */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-instant: 80ms;
+  --dur-short:   180ms;
+  --dur-medium:  280ms;
+
+  /* Radii */
+  --radius-sm:   0.5rem;
+  --radius-md:   0.75rem;
+  --radius-lg:   1rem;
+  --radius-xl:   1.25rem;
+  --radius-full: 9999px;
+}

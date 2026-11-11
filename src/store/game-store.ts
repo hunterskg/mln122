@@ -16,13 +16,33 @@ import {
   autosaveGame,
   importSaveFromJson,
   SaveOperationResult,
+  LifeState,
+  generateInitialLife,
+  applyLifeChoice,
 } from '@/engine';
+
+interface LifeStoneSummary {
+  id: string;
+  ten: string;
+  diaPhuong: string;
+  tuoiKetThuc: number;
+  tienMat: number;
+  lyDoKetThuc: string;
+  seed: number;
+}
 
 interface GameStore {
   gameState: GameState | null;
   currentActions: PlayerTurnActions;
-  
-  // Actions
+  lifeState: LifeState | null;
+  lifeStones: LifeStoneSummary[];
+
+  // Life Sim Actions
+  initNewLife: (seed?: number) => void;
+  makeLifeChoice: (choiceId: string) => void;
+  resetLife: () => void;
+
+  // Legacy Enterprise Actions
   initNewGame: (
     name: string,
     industry: Industry,
@@ -65,6 +85,43 @@ export const useGameStore = create<GameStore>()(
     (set, get) => ({
       gameState: null,
       currentActions: defaultActions,
+      lifeState: null,
+      lifeStones: [],
+
+      initNewLife: (seed) => {
+        const chosenSeed = typeof seed === 'number' && Number.isFinite(seed) ? Math.floor(seed) : Math.floor(Date.now() % 10000000);
+        const newLife = generateInitialLife(chosenSeed);
+        set({ lifeState: newLife });
+      },
+
+      makeLifeChoice: (choiceId) => {
+        const { lifeState, lifeStones } = get();
+        if (!lifeState || lifeState.isGameOver) return;
+        const nextLife = applyLifeChoice(lifeState, choiceId);
+        let updatedStones = lifeStones;
+        if (nextLife.isGameOver) {
+          const alreadyLogged = lifeStones.some((s) => s.id === nextLife.profile.id);
+          if (!alreadyLogged) {
+            updatedStones = [
+              {
+                id: nextLife.profile.id,
+                ten: nextLife.profile.ten,
+                diaPhuong: nextLife.profile.diaPhuong,
+                tuoiKetThuc: nextLife.profile.tuoi,
+                tienMat: nextLife.stats.tienMat,
+                lyDoKetThuc: nextLife.lyDoKetThuc || 'Hoàn thành cuộc đời',
+                seed: nextLife.seed,
+              },
+              ...lifeStones.slice(0, 19),
+            ];
+          }
+        }
+        set({ lifeState: nextLife, lifeStones: updatedStones });
+      },
+
+      resetLife: () => {
+        set({ lifeState: null });
+      },
 
       initNewGame: (name, industry, businessModel, founderTrait, difficulty) => {
         const state = createInitialGameState(name, industry, businessModel, founderTrait, difficulty, Date.now());
@@ -239,12 +296,16 @@ export const useGameStore = create<GameStore>()(
     }),
     {
       name: 'startup_life_state_v1',
-      version: 2,
-      migrate: (persistedState: any) => {
-        if (!persistedState || !persistedState.gameState || !persistedState.gameState.company || !persistedState.gameState.company.name) {
-          return { gameState: null, currentActions: defaultActions };
+      version: 3,
+      migrate: (persistedState: any, version: number) => {
+        if (!persistedState) {
+          return { gameState: null, currentActions: defaultActions, lifeState: null, lifeStones: [] };
         }
-        return persistedState;
+        return {
+          ...persistedState,
+          lifeState: persistedState.lifeState || null,
+          lifeStones: Array.isArray(persistedState.lifeStones) ? persistedState.lifeStones : [],
+        };
       },
     }
   )
