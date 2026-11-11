@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Chương 1: Đối tượng, phương pháp nghiên cứu và chức năng của Kinh tế chính trị Mác - Lênin",
+    "shortTitle": "Đối tượng & Phương pháp",
+    "description": "Nắm vững bản chất quy luật kinh tế khách quan, phương pháp trừu tượng hóa khoa học và các chức năng nhận thức, thực tiễn, tư tưởng.",
+    "coreConcepts": ["Quy luật kinh tế khách quan", "Chính sách kinh tế chủ quan", "Trừu tượng hóa khoa học", "Quan hệ sản xuất"],
+    "recommendedPages": "Trang 9 - 36 (Giáo trình 2021)"
+  },
+  {
+    "id": 2,
+    "title": "Chương 2: Hàng hóa, thị trường và vai trò của các chủ thể tham gia thị trường",
+    "shortTitle": "Hàng hóa & Thị trường",
+    "description": "Hai thuộc tính của hàng hóa, tính hai mặt của lao động sản xuất hàng hóa, lượng giá trị, bản chất tiền tệ và các quy luật thị trường.",
+    "coreConcepts": ["Giá trị & Giá trị sử dụng", "Lao động cụ thể & Trừu tượng", "Quy luật giá trị", "Quy luật lưu thông tiền tệ", "Tư bản giả & Đất đai"],
+    "recommendedPages": "Trang 37 - 92 (Giáo trình 2021)"
+  },
+  {
+    "id": 3,
+    "title": "Chương 3: Giá trị thặng dư trong nền kinh tế thị trường",
+    "shortTitle": "Giá trị thặng dư (m)",
+    "description": "Hàng hóa sức lao động, bản chất nguồn gốc giá trị thặng dư, tư bản bất biến (c) và khả biến (v), hai phương pháp sản xuất m, tích lũy tư bản.",
+    "coreConcepts": ["Hàng hóa sức lao động", "Tư bản bất biến (c) & khả biến (v)", "m tuyệt đối & m tương đối", "Tiền lương", "Tích lũy tư bản"],
+    "recommendedPages": "Trang 93 - 156 (Giáo trình 2021)"
+  },
+  {
+    "id": 4,
+    "title": "Chương 4: Cạnh tranh và độc quyền trong nền kinh tế thị trường",
+    "shortTitle": "Cạnh tranh & Độc quyền",
+    "description": "Sự chuyển hóa từ tự do cạnh tranh sang độc quyền, độc quyền nhà nước, giá cả và lợi nhuận độc quyền, mặt tích cực và tiêu cực.",
+    "coreConcepts": ["Tập trung sản xuất", "Tổ chức độc quyền", "Độc quyền nhà nước", "Giá cả độc quyền", "Lợi nhuận độc quyền"],
+    "recommendedPages": "Trang 157 - 198 (Giáo trình 2021)"
+  },
+  {
+    "id": 5,
+    "title": "Chương 5: Kinh tế thị trường định hướng xã hội chủ nghĩa và các quan hệ lợi ích kinh tế ở Việt Nam",
+    "shortTitle": "KTTT định hướng XHCN",
+    "description": "Tính tất yếu, đặc trưng bản chất của KTTT định hướng XHCN, đa dạng sở hữu và thành phần kinh tế, quan hệ phân phối và hài hòa lợi ích.",
+    "coreConcepts": ["KTTT định hướng XHCN", "Thành phần kinh tế", "Phân phối theo lao động", "Hài hòa lợi ích kinh tế"],
+    "recommendedPages": "Trang 199 - 250 (Giáo trình 2021)"
+  },
+  {
+    "id": 6,
+    "title": "Chương 6: Công nghiệp hóa, hiện đại hóa và hội nhập kinh tế quốc tế của Việt Nam",
+    "shortTitle": "CNH, HĐH & Hội nhập",
+    "description": "Cách mạng công nghiệp và CNH, HĐH ở Việt Nam trong bối cảnh CMCN 4.0; vị trí của người lao động số; hội nhập kinh tế quốc tế.",
+    "coreConcepts": ["CMCN 4.0", "Kinh tế tri thức", "Chuyển dịch cơ cấu kinh tế", "Hội nhập kinh tế quốc tế", "Độc lập tự chủ"],
+    "recommendedPages": "Trang 251 - 310 (Giáo trình 2021)"
+  }
+]
