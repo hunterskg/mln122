@@ -143,6 +143,11 @@ export function EventModal({ scene, tuoi, onSelectChoice, event, selectedOptionI
                         {hotkey}
                       </span>
                       <div>
+                        {choice.nhanDacBiet && (
+                          <span className='inline-flex items-center gap-1 px-2 py-0.5 rounded bg-amber-500/15 border border-amber-500/35 text-amber-300 text-[10px] font-bold uppercase tracking-wider mb-1.5 font-body'>
+                            {choice.nhanDacBiet.normalize('NFC')}
+                          </span>
+                        )}
                         <div className='text-base font-bold text-ink font-body group-hover:text-amber-200 transition-colors'>
                           {choice.vanBan.normalize('NFC')}
                         </div>

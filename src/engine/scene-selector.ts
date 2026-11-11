@@ -47,15 +47,25 @@ export function selectNextScene(state: LifeState, prng: PRNG): LifeScene | undef
   // Chọn theo trọng số
   const totalWeight = candidatePool.reduce((sum, s) => sum + s.trongSo, 0);
   let roll = prng.range(0, totalWeight - 1);
+  let selectedScene = candidatePool[0];
 
   for (const scene of candidatePool) {
     if (roll < scene.trongSo) {
-      return scene;
+      selectedScene = scene;
+      break;
     }
     roll -= scene.trongSo;
   }
 
-  return candidatePool[0];
+  // Lọc các lựa chọn phù hợp với điều kiện xuất thân/trạng thái hiện tại
+  const validChoices = selectedScene.luaChon.filter(
+    (choice) => !choice.dieuKien || choice.dieuKien(state)
+  );
+
+  return {
+    ...selectedScene,
+    luaChon: validChoices.length > 0 ? validChoices : selectedScene.luaChon,
+  };
 }
 
 export function applyLifeChoice(state: LifeState, choiceId: string): LifeState {

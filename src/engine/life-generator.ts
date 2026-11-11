@@ -49,7 +49,8 @@ export function generateInitialLife(seed: number = 1337): LifeState {
   const diaPhuongPool = DIA_PHUONG_THEO_VUNG[vungMien];
   const diaPhuong = diaPhuongPool[prng.range(0, diaPhuongPool.length - 1)];
 
-  // 2. Tầng lớp xuất thân (Nông thôn: 40%, Lao động đô thị: 45%, Tiểu tư sản: 15%)
+  // 2. Tầng lớp xuất thân
+  // Nông thôn nghèo: 30%, Lao động đô thị: 35%, Tiểu tư sản: 15%, Trí thức tinh hoa: 12%, Doanh nhân thành đạt: 8%
   const rollXuatThan = prng.range(1, 100);
   let xuatThan: XuatThan = 'lao_dong_do_thi';
   let tienMat = 4000000;
@@ -57,7 +58,7 @@ export function generateInitialLife(seed: number = 1337): LifeState {
   let tieuSuNgan = '';
   let ngheNghiep = 'Lao động tự do';
 
-  if (rollXuatThan <= 40) {
+  if (rollXuatThan <= 30) {
     xuatThan = 'nong_thon_ngheo';
     tienMat = prng.range(500, 2000) * 1000;
     if (prng.range(1, 100) <= 35) {
@@ -65,7 +66,7 @@ export function generateInitialLife(seed: number = 1337): LifeState {
     }
     ngheNghiep = 'Công nhân phụ kho';
     tieuSuNgan = `Sinh ra trong gia đình thuần nông tại ${diaPhuong}. Bố mẹ làm lụng vất vả, năm 18 tuổi quyết định tự lập kiếm sống.`;
-  } else if (rollXuatThan <= 85) {
+  } else if (rollXuatThan <= 65) {
     xuatThan = 'lao_dong_do_thi';
     tienMat = prng.range(3000, 7000) * 1000;
     if (prng.range(1, 100) <= 20) {
@@ -73,11 +74,21 @@ export function generateInitialLife(seed: number = 1337): LifeState {
     }
     ngheNghiep = 'Nhân viên bán hàng thời vụ';
     tieuSuNgan = `Lớn lên ở khu phố lao động tại ${diaPhuong}. Bố chạy xe, mẹ buôn gánh bán bưng, quen với nhịp mưu sinh chật vật từ nhỏ.`;
-  } else {
+  } else if (rollXuatThan <= 80) {
     xuatThan = 'tieu_tu_san';
     tienMat = prng.range(15000, 35000) * 1000;
     ngheNghiep = 'Học việc văn phòng';
     tieuSuNgan = `Gia đình công chức nhỏ tại ${diaPhuong}. Được chu cấp học hành tử tế, nhưng bắt đầu đối mặt với áp lực kỳ vọng của gia tộc.`;
+  } else if (rollXuatThan <= 92) {
+    xuatThan = 'tri_thuc_tinh_hoa';
+    tienMat = prng.range(35000, 75000) * 1000;
+    ngheNghiep = 'Sinh viên đại học trọng điểm';
+    tieuSuNgan = `Gia đình trí thức tại ${diaPhuong}, cha mẹ là giảng viên đại học và bác sĩ chuyên khoa. Tuổi thơ gắn liền với sách vở, được định hướng học vấn vững chắc, song phải gánh trên vai kỳ vọng học thuật to lớn của gia tộc.`;
+  } else {
+    xuatThan = 'doanh_nhan_thanh_dat';
+    tienMat = prng.range(80000, 180000) * 1000;
+    ngheNghiep = 'Quản lý kinh doanh gia đình';
+    tieuSuNgan = `Sinh ra trong gia đình chủ doanh nghiệp sản xuất và thương mại tại ${diaPhuong}. Tuổi 18 đã có sẵn vốn liếng, xe cộ và mạng lưới bạn hàng nâng đỡ, bắt đầu làm quen với bài toán vận hành tư bản thực tế.`;
   }
 
   // 3. Giới tính & Tên

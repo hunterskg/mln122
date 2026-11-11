@@ -69,12 +69,14 @@ export function DashboardScreen() {
     const spiritStatus = getSpiritStatus(s.tinhThan);
     const kinshipStatus = getKinshipStatus(s.quanHe);
 
-    const xuatThanText =
-      p.xuatThan === 'nong_thon_ngheo'
-        ? 'Nông thôn thuần nông'
-        : p.xuatThan === 'lao_dong_do_thi'
-        ? 'Lao động đô thị'
-        : 'Hộ buôn bán nhỏ';
+    const xuatThanTextMap: Record<string, string> = {
+      nong_thon_ngheo: 'Nông thôn thuần nông',
+      lao_dong_do_thi: 'Lao động đô thị',
+      tieu_tu_san: 'Hộ buôn bán nhỏ',
+      tri_thuc_tinh_hoa: 'Trí thức tinh hoa',
+      doanh_nhan_thanh_dat: 'Gia đình doanh nhân',
+    };
+    const xuatThanText = xuatThanTextMap[p.xuatThan] || 'Lao động tự do';
 
     return (
       <div className="space-y-6">

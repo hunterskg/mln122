@@ -59,6 +59,16 @@ export function SetupScreen() {
       desc: 'Gia đình có cửa hàng tạp hóa hoặc tiệm sửa xe nhỏ, có chút vốn phòng thân.',
       tagColor: 'text-emerald-400 bg-emerald-950/40 border-emerald-800/60',
     },
+    tri_thuc_tinh_hoa: {
+      label: 'Trí thức / Chuyên gia cao cấp',
+      desc: 'Bố mẹ là giảng viên đại học, bác sĩ chuyên khoa; bệ phóng học vấn và văn hóa vững vàng.',
+      tagColor: 'text-indigo-400 bg-indigo-950/40 border-indigo-800/60',
+    },
+    doanh_nhan_thanh_dat: {
+      label: 'Gia đình doanh nhân tư sản',
+      desc: 'Gia đình sở hữu cơ sở sản xuất và mạng lưới thương mại; vốn liếng dồi dào từ ngày khởi đầu.',
+      tagColor: 'text-amber-300 bg-amber-900/40 border-amber-500/60',
+    },
   };
 
   const vungMienLabels: Record<string, string> = {

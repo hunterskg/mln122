@@ -33,6 +33,15 @@ export function FinalReportScreen() {
     const p = lifeState.profile;
     const s = lifeState.stats;
 
+    const xuatThanNameMap: Record<string, string> = {
+      nong_thon_ngheo: 'Nông thôn thuần nông',
+      lao_dong_do_thi: 'Lao động đô thị',
+      tieu_tu_san: 'Hộ buôn bán nhỏ',
+      tri_thuc_tinh_hoa: 'Trí thức tinh hoa',
+      doanh_nhan_thanh_dat: 'Gia đình doanh nhân',
+    };
+    const xuatThanText = xuatThanNameMap[p.xuatThan] || 'Lao động tự do';
+
     return (
       <div className="max-w-4xl mx-auto space-y-6 py-6 px-4 sm:px-6">
         {/* Main Title Banner */}
@@ -70,7 +79,7 @@ export function FinalReportScreen() {
                 {lifeState.lyDoKetThuc || 'Hoàn thành trọn vẹn cuộc đời'}
               </p>
               <p className="text-[11px] text-muted">
-                Xuất phát từ {p.diaPhuong} ({p.xuatThan === 'nong_thon_ngheo' ? 'Nông thôn thuần nông' : p.xuatThan === 'lao_dong_do_thi' ? 'Lao động đô thị' : 'Hộ buôn bán nhỏ'}), trải qua {lifeState.history.length} cột mốc thăng trầm.
+                Xuất phát từ {p.diaPhuong} ({xuatThanText}), trải qua {lifeState.history.length} cột mốc thăng trầm.
               </p>
             </div>
 

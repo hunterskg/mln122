@@ -143,6 +143,36 @@ export const REFLECTION_PATTERNS: ReflectionPattern[] = [
       `Những ngày tháng ăn mì gói phụ việc trong xưởng ${state.profile.ngheNghiep} thuở mười tám đã trui rèn cho bạn cái nghề vững chắc trong tay. Khi thị trường biến động, chính tay nghề kỹ thuật chuyên môn chứ không phải sức bắp đã giúp bạn đứng vững.`,
     gocTrietHoc: 'Chuyển hóa từ lao động giản đơn sang lao động phức tạp tạo giá trị cao hơn.',
   },
+  {
+    id: 'pat_tri_thuc_tinh_hoa',
+    tenMoThuc: 'Trí thức phụng sự',
+    moTaNgan: 'Tận dụng ưu thế giáo dục tinh hoa để kiến tạo giá trị tri thức cho xã hội.',
+    dieuKien: (state) => state.profile.xuatThan === 'tri_thuc_tinh_hoa' || Boolean(state.flags['con_duong_hoc_thuat']),
+    tinhDiemUuTien: (state) => 44,
+    sinhVanBan: (state) =>
+      `Được thừa hưởng nền tảng học vấn vững chãi từ gia đình trí thức tại ${state.profile.diaPhuong}, bạn đã chọn con đường dấn thân nghiên cứu và phát triển chuyên môn sâu. Bạn nhận thức rõ đặc quyền văn hóa của mình và không ngừng nỗ lực biến tri thức thành công cụ cải thiện đời sống cộng đồng.`,
+    gocTrietHoc: 'Lao động trí óc phức tạp, quá trình tái sản xuất sức lao động chất lượng cao và trách nhiệm xã hội của tầng lớp trí thức.',
+  },
+  {
+    id: 'pat_van_hanh_tu_ban',
+    tenMoThuc: 'Bản lĩnh thương trường',
+    moTaNgan: 'Làm chủ dòng vốn tư bản và lèo lái doanh nghiệp trước sóng gió thị trường.',
+    dieuKien: (state) => state.profile.xuatThan === 'doanh_nhan_thanh_dat' || Boolean(state.flags['van_hanh_doanh_nghiep']),
+    tinhDiemUuTien: (state) => 44,
+    sinhVanBan: (state) =>
+      `Kế thừa và phát triển tiềm lực kinh tế của gia đình, bạn đã trực tiếp đối mặt với quy luật cung cầu, cạnh tranh gay gắt và bài toán quản lý dòng vốn tư bản. Giữa lợi nhuận và trách nhiệm với hàng chục nhân sự, bạn đã định hình được triết lý kinh doanh của một nhà quản trị bản lĩnh.`,
+    gocTrietHoc: 'Quy luật tích tụ, tập trung tư bản và trách nhiệm điều tiết quan hệ giữa chủ tư bản và người lao động.',
+  },
+  {
+    id: 'pat_nga_ngua_dinh_cao',
+    tenMoThuc: 'Cú ngã đỉnh cao',
+    moTaNgan: 'Càng trèo cao ngã càng đau: trả giá đắt cho tham vọng đòn bẩy và quyền lực mù quáng.',
+    dieuKien: (state) => Boolean(state.flags['nga_ngua_trang_tay'] || state.flags['than_bai_danh_liet']),
+    tinhDiemUuTien: (state) => 75,
+    sinhVanBan: (state) =>
+      `Khởi đầu từ vị thế tầng lớp trên với muôn vàn ưu thế, bạn đã bước vào những ván cược khổng lồ của đòn bẩy tài chính hoặc quyền lực học thuật ngầm. Nhưng quy luật khắc nghiệt đã chứng minh: càng đứng ở vị trí cao ngất ngưởng, cú rơi tự do càng trở nên chấn động và đau đớn khôn cùng. Mất đi khối tài sản hàng trăm triệu và danh tiếng cả đời, bạn thấm thía cái giá nghiệt ngã của sự tham lam và tha hóa.`,
+    gocTrietHoc: 'Khủng hoảng cơ cấu do đòn bẩy tài chính tư bản quá mức, sự tha hóa quyền lực và cái giá mang tính quy luật khi bất chấp chuẩn mực đạo đức kinh tế.',
+  },
 ];
 
 export function evaluateReflection(state: LifeState): LifeReflectionReport {

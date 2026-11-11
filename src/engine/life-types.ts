@@ -1,6 +1,11 @@
 // Life Simulation Core Types
 export type VungMien = 'bac' | 'trung' | 'nam';
-export type XuatThan = 'nong_thon_ngheo' | 'lao_dong_do_thi' | 'tieu_tu_san';
+export type XuatThan =
+  | 'nong_thon_ngheo'
+  | 'lao_dong_do_thi'
+  | 'tieu_tu_san'
+  | 'tri_thuc_tinh_hoa'
+  | 'doanh_nhan_thanh_dat';
 export type GioiTinh = 'nam' | 'nu';
 
 export interface LifeProfile {
@@ -33,6 +38,8 @@ export interface LifeChoice {
   id: string;
   vanBan: string;
   moTaHauQuaNgan?: string;
+  dieuKien?: (state: LifeState) => boolean;
+  nhanDacBiet?: string;
   tacDong: {
     tienMatDelta?: number;
     sucKhoeDelta?: number;
