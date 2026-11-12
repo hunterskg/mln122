@@ -238,6 +238,16 @@ export function FinalReportScreen() {
                 <span>Bốc một cuộc đời mới</span>
               </Button>
             </div>
+
+            {/* Credit Footer */}
+            <div className="pt-4 border-t border-rule-subtle text-center space-y-1">
+              <p className="text-xs font-semibold tracking-wider uppercase text-amber-300">
+                Made by Group 4
+              </p>
+              <p className="text-[11px] text-muted">
+                Dự án Mô phỏng Nhân sinh &amp; Vận dụng Kinh tế chính trị Mác - Lênin
+              </p>
+            </div>
           </CardContent>
         </Card>
       </div>
@@ -259,6 +269,9 @@ export function FinalReportScreen() {
       >
         Về Menu chính
       </Button>
+      <div className="pt-4 text-xs text-muted">
+        Made by <span className="text-amber-300 font-semibold">Group 4</span>
+      </div>
     </div>
   );
 }

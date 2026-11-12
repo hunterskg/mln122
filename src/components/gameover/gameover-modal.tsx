@@ -69,6 +69,10 @@ export function GameOverModal({ state, onReset }: { state: GameState; onReset: (
           <RotateCcw className="w-4 h-4" />
           <span>Bắt đầu ván chơi mới từ đầu</span>
         </button>
+
+        <div className="pt-2 text-center text-xs text-slate-400">
+          Made by <span className="text-amber-300 font-semibold">Group 4</span>
+        </div>
       </div>
     </div>
   );

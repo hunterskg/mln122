@@ -5,12 +5,14 @@ import { useGameStore } from '@/store/game-store';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { TutorialModal } from '@/components/guide/tutorial-modal';
+import { ConfirmModal } from '@/components/ui/modal';
 import { formatCurrency } from '@/lib/utils';
 
 export function MainMenuScreen() {
   const { setActiveScreen } = useUIStore();
   const { lifeState, lifeStones, resetLife } = useGameStore();
   const [showTutorial, setShowTutorial] = useState(false);
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
   return (
     <div className="min-h-screen bg-paper flex flex-col items-center justify-center p-4 relative overflow-hidden">
@@ -90,11 +92,7 @@ export function MainMenuScreen() {
             <Button
               size="md"
               variant="ghost"
-              onClick={() => {
-                if (window.confirm('Bạn có chắc chắn muốn xóa tiến trình cuộc đời hiện tại?')) {
-                  resetLife();
-                }
-              }}
+              onClick={() => setShowDeleteConfirm(true)}
               className="w-full text-xs text-rose-400 hover:text-rose-300 hover:bg-rose-950/20 whitespace-nowrap"
             >
               <RotateCcw className="w-3.5 h-3.5 mr-1" />
@@ -143,6 +141,19 @@ export function MainMenuScreen() {
       </div>
 
       <TutorialModal isOpen={showTutorial} onClose={() => setShowTutorial(false)} />
+      <ConfirmModal
+        isOpen={showDeleteConfirm}
+        onClose={() => setShowDeleteConfirm(false)}
+        onConfirm={() => {
+          setShowDeleteConfirm(false);
+          resetLife();
+        }}
+        title="Xác nhận xóa tiến trình"
+        message="Bạn có chắc chắn muốn xóa tiến trình cuộc đời hiện tại không? Mọi lựa chọn và điểm số của nhân vật sẽ bị xóa bỏ."
+        confirmText="Xóa tiến trình"
+        cancelText="Hủy bỏ"
+        variant="danger"
+      />
     </div>
   );
 }

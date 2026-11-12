@@ -3,6 +3,7 @@ import { useGameStore } from '@/store/game-store';
 import { useUIStore } from '@/store/ui-store';
 import { EventModal } from '@/components/events/event-modal';
 import { Button } from '@/components/ui/button';
+import { ConfirmModal } from '@/components/ui/modal';
 import { formatCurrency } from '@/lib/utils';
 import {
   Heart,
@@ -26,6 +27,7 @@ export function DashboardScreen() {
   const { lifeState, makeLifeChoice, resetLife, gameState } = useGameStore();
   const { setActiveScreen } = useUIStore();
   const [showHistoryDrawer, setShowHistoryDrawer] = useState(false);
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
 
   // If Life Sim state is present, render Life Sim Dashboard
   if (lifeState) {
@@ -141,12 +143,7 @@ export function DashboardScreen() {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => {
-                if (window.confirm('Khởi tạo và bốc một cuộc đời mới?')) {
-                  resetLife();
-                  setActiveScreen('setup');
-                }
-              }}
+              onClick={() => setShowResetConfirm(true)}
               className="text-xs h-9 px-3 text-rose-400 hover:text-rose-300 hover:bg-rose-950/20 whitespace-nowrap"
             >
               <RotateCcw className="w-3.5 h-3.5 mr-1" />
@@ -376,6 +373,21 @@ export function DashboardScreen() {
             </div>
           </div>
         )}
+        {/* Confirm Reset Modal */}
+        <ConfirmModal
+          isOpen={showResetConfirm}
+          onClose={() => setShowResetConfirm(false)}
+          onConfirm={() => {
+            setShowResetConfirm(false);
+            resetLife();
+            setActiveScreen('setup');
+          }}
+          title="Bốc một cuộc đời mới"
+          message="Bạn có chắc chắn muốn kết thúc tiến trình hiện tại và bốc ngẫu nhiên một cuộc đời mới không? Toàn bộ chỉ số hiện thời sẽ được làm mới."
+          confirmText="Bốc lại ngay"
+          cancelText="Giữ lại"
+          variant="warning"
+        />
       </div>
     );
   }

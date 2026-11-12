@@ -3,6 +3,7 @@ import { useGameStore } from '@/store/game-store';
 import { useUIStore } from '@/store/ui-store';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { ConfirmModal } from '@/components/ui/modal';
 import { listSaveSlots, SaveMetadata, exportSaveToJson } from '@/engine';
 import { formatCurrency, formatDate } from '@/lib/utils';
 import {
@@ -30,6 +31,7 @@ export function SavesScreen() {
   const [saveList, setSaveList] = useState<Record<string, SaveMetadata | null>>({});
   const [showImport, setShowImport] = useState(false);
   const [importInput, setImportInput] = useState('');
+  const [deletingSlotId, setDeletingSlotId] = useState<string | null>(null);
 
   const refreshList = () => {
     const slots = listSaveSlots();
@@ -82,14 +84,19 @@ export function SavesScreen() {
   };
 
   const handleDelete = (slotId: string) => {
-    if (!window.confirm(`Bạn có chắc chắn muốn xóa dữ liệu lưu tại vị trí [${slotId}]?`)) return;
-    deleteSlot(slotId);
+    setDeletingSlotId(slotId);
+  };
+
+  const confirmDelete = () => {
+    if (!deletingSlotId) return;
+    deleteSlot(deletingSlotId);
     addToast({
       type: 'info',
       title: 'Đã xóa bản lưu',
-      description: `Vị trí lưu [${slotId}] đã được giải phóng.`,
+      description: `Vị trí lưu [${deletingSlotId}] đã được giải phóng.`,
     });
     refreshList();
+    setDeletingSlotId(null);
   };
 
   const handleExport = (slotId: string) => {
@@ -298,6 +305,21 @@ export function SavesScreen() {
           Tiến trình tự động lưu được thực thi tại thời điểm kết thúc mỗi tháng. Mọi dữ liệu lưu trữ được bảo vệ an toàn bằng chuẩn kiểm tra tính hợp lệ dữ liệu trong LocalStorage của trình duyệt.
         </p>
       </div>
+
+      <ConfirmModal
+        isOpen={Boolean(deletingSlotId)}
+        onClose={() => setDeletingSlotId(null)}
+        onConfirm={confirmDelete}
+        title="Xóa bản lưu dữ liệu"
+        message={
+          deletingSlotId
+            ? `Bạn có chắc chắn muốn xóa vĩnh viễn dữ liệu lưu tại vị trí [${SLOTS.find((s) => s.id === deletingSlotId)?.label || deletingSlotId}] không?`
+            : ''
+        }
+        confirmText="Xóa bản lưu"
+        cancelText="Hủy bỏ"
+        variant="danger"
+      />
     </div>
   );
 }
