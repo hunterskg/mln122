@@ -190,13 +190,13 @@ describe('Life Simulation Engine & Playtest Swarm Verification', () => {
 
     const eliteLife = generateInitialLife(eliteSeed);
     expect(eliteLife.profile.xuatThan).toBe('tri_thuc_tinh_hoa');
-    expect(eliteLife.activeScene?.id).toBe('scene_18_tri_thuc_hoc_bong_quoc_te');
-    expect(eliteLife.activeScene?.id).not.toBe('scene_18_buoc_vao_doi_hoc_nghe_hay_lam_thue');
+    expect(eliteLife.activeScene?.id).toBe('scene_18_tri_thuc_tinh_hoa');
+    expect(eliteLife.activeScene?.id).not.toBe('scene_18_hoc_nghe');
 
     const businessLife = generateInitialLife(businessSeed);
     expect(businessLife.profile.xuatThan).toBe('doanh_nhan_thanh_dat');
-    expect(businessLife.activeScene?.id).toBe('scene_18_doanh_nhan_khoi_nghiep_gia_toc');
-    expect(businessLife.activeScene?.id).not.toBe('scene_18_buoc_vao_doi_hoc_nghe_hay_lam_thue');
+    expect(businessLife.activeScene?.id).toBe('scene_18_doanh_nhan_thanh_dat');
+    expect(businessLife.activeScene?.id).not.toBe('scene_18_hoc_nghe');
 
     // Verify elite playthroughs never hit manual labor scenes
     for (const seed of [eliteSeed, businessSeed]) {
@@ -205,9 +205,8 @@ describe('Life Simulation Engine & Playtest Swarm Verification', () => {
       while (!state.isGameOver && turns < 30 && state.activeScene) {
         turns++;
         expect([
-          'scene_18_buoc_vao_doi_hoc_nghe_hay_lam_thue',
-          'scene_22_nha_tro_ngap_lut',
-          'scene_24_chuyen_nha_tro_gia_re',
+          'scene_18_hoc_nghe',
+          'scene_24_ca_dem',
           'scene_58_nghi_ngoi_hay_lam_them',
           'scene_62_con_bao_benh',
         ]).not.toContain(state.activeScene.id);
@@ -244,5 +243,29 @@ describe('Life Simulation Engine & Playtest Swarm Verification', () => {
     const reflection = evaluateReflection(postFallState);
     const patternTitles = reflection.moThucChinh.map((m) => m.ten);
     expect(patternTitles).toContain('Cú ngã đỉnh cao');
+  });
+
+  it('Curriculum alignment: all scenes, choices, and reflection patterns have textbook references', () => {
+    // 1. Every scene has chuDeKTCT
+    for (const scene of LIFE_SCENES) {
+      expect(scene.chuDeKTCT).toBeDefined();
+      expect(scene.chuDeKTCT!.length).toBeGreaterThan(5);
+      expect(scene.chuDeKTCT!).toMatch(/Chương [1-3]/);
+
+      // 2. Every choice has khaiNiemKTCT
+      for (const choice of scene.luaChon) {
+        expect(choice.khaiNiemKTCT).toBeDefined();
+        expect(choice.khaiNiemKTCT!.length).toBeGreaterThan(3);
+      }
+    }
+
+    // 3. Every reflection pattern cites exact textbook chapters and arguments
+    for (const pat of REFLECTION_PATTERNS) {
+      expect(pat.chuongGiaoTrinh).toBeDefined();
+      expect(pat.chuongGiaoTrinh.length).toBeGreaterThan(5);
+      expect(pat.chuongGiaoTrinh).toMatch(/Chương [1-3]/);
+      expect(pat.luanDiemGiaoTrinh).toBeDefined();
+      expect(pat.luanDiemGiaoTrinh.length).toBeGreaterThan(20);
+    }
   });
 });

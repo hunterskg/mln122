@@ -9,6 +9,8 @@ export interface ReflectionPattern {
   tinhDiemUuTien: (state: LifeState) => number;
   sinhVanBan: (state: LifeState) => string;
   gocTrietHoc?: string;
+  chuongGiaoTrinh: string;
+  luanDiemGiaoTrinh: string;
 }
 
 export interface LifeReflectionReport {
@@ -17,6 +19,8 @@ export interface LifeReflectionReport {
     ten: string;
     moTaNgan: string;
     doanNhinLai: string;
+    chuongGiaoTrinh: string;
+    luanDiemGiaoTrinh: string;
   }[];
   cauHoiMo: string;
   gocKinhTeChinhTri: string;
@@ -32,6 +36,9 @@ export const REFLECTION_PATTERNS: ReflectionPattern[] = [
     sinhVanBan: (state) =>
       `Bạn bước qua đời người như một con ong thợ cần mẫn tại ${state.profile.diaPhuong}. Những ca làm đêm rã rời, những lần nén cơn đau lưng để tiếp tục cầm vô lăng hay đứng máy đã giúp bạn tích lũy được ${formatCurrency(Math.max(0, state.stats.tienMat))}. Bạn đã hoàn thành bổn phận của một người lao động kiên cường, dẫu thân thể mang đầy vết hằn của sự hao mòn sinh học mà tiền bạc khó lòng mua lại được.`,
     gocTrietHoc: 'Quy luật bóc lột giá trị thặng dư tuyệt đối và hao mòn sức lao động.',
+    chuongGiaoTrinh: 'Chương 3 · Sản xuất giá trị thặng dư trong nền KTTT',
+    luanDiemGiaoTrinh:
+      'C. Mác chỉ rõ: Hàng hóa sức lao động là nguồn gốc tạo ra giá trị thặng dư. Việc người sử dụng lao động kéo dài thời gian làm việc vượt quá thời gian lao động tất yếu chính là phương pháp sản xuất giá trị thặng dư tuyệt đối, đẩy cơ thể người lao động vào sự hao mòn thể lực và tinh thần nghiêm trọng.',
   },
   {
     id: 'pat_tru_cot_hy_sinh',
@@ -42,6 +49,9 @@ export const REFLECTION_PATTERNS: ReflectionPattern[] = [
     sinhVanBan: (state) =>
       `Trong mắt gia đình và họ hàng, bạn là điểm tựa vững chãi nhất. Dù có những lúc ví tiền cạn kiệt hay phải gác lại việc riêng, bạn chưa từng chối từ khi người thân cần giúp đỡ. Tình nghĩa họ hàng và sự ấm êm của mái nhà chính là gia tài lớn nhất mà bạn để lại cho đời, dẫu đôi khi bạn phải âm thầm nuốt những trăn trở riêng vào trong.`,
     gocTrietHoc: 'Tính xã hội của sức lao động và sự tương trợ trong cộng đồng lao động.',
+    chuongGiaoTrinh: 'Chương 3 · Giá trị của hàng hóa sức lao động',
+    luanDiemGiaoTrinh:
+      'Giáo trình xác định giá trị hàng hóa sức lao động bao hàm cả chi phí tư liệu sinh hoạt nuôi con của người lao động và duy trì tái sản xuất sức lao động thế hệ kế tiếp. Trách nhiệm gia đình phản ánh tính xã hội sâu sắc của sức lao động.',
   },
   {
     id: 'pat_thanh_than_an_nhien',
@@ -52,6 +62,9 @@ export const REFLECTION_PATTERNS: ReflectionPattern[] = [
     sinhVanBan: (state) =>
       `Bạn không để đồng tiền trói buộc đôi chân mình. Giữa guồng quay hối hả của cơm áo gạo tiền, bạn luôn biết dừng lại đúng lúc để lắng nghe hơi thở bản thân và chia sẻ bữa cơm ấm với bạn bè. Bạn có thể không để lại những khối tài sản đồ sộ, nhưng bạn đã sống từng ngày trọn vẹn không tiếc nuối.`,
     gocTrietHoc: 'Giá trị sử dụng của đời sống tinh thần vượt lên trên sự sùng bái hàng hóa tiền tệ.',
+    chuongGiaoTrinh: 'Chương 2 · Hai thuộc tính của hàng hóa',
+    luanDiemGiaoTrinh:
+      'Hàng hóa gồm giá trị sử dụng và giá trị. Đích đến thực sự của hoạt động con người là thỏa mãn các giá trị sử dụng vật chất và tinh thần đích thực, vượt lên sự sùng bái tiền tệ hình thức T - H - T.',
   },
   {
     id: 'pat_thuc_dung_song_sot',
@@ -62,6 +75,9 @@ export const REFLECTION_PATTERNS: ReflectionPattern[] = [
     sinhVanBan: (state) =>
       `Xuất phát từ hoàn cảnh chật vật, bạn sớm hiểu rằng không ai có thể cứu mình ngoài chính bản thân. Bạn tỉnh táo trước mọi lời rủ rê, dứt khoát cắt bỏ những gánh nặng không cần thiết để bảo vệ tài chính cá nhân. Sự thực tế ấy đã giúp bạn không bao giờ rơi vào cảnh túng quẫn, dẫu đôi khi trong căn phòng rộng, bạn thoáng thấy một khoảng trống cô đơn.`,
     gocTrietHoc: 'Quy luật cạnh tranh và áp lực tích lũy tư bản cá thể.',
+    chuongGiaoTrinh: 'Chương 2 · Quy luật giá trị & Quy luật cạnh tranh',
+    luanDiemGiaoTrinh:
+      'Quy luật giá trị đòi hỏi hao phí lao động cá biệt phải nhỏ hơn hao phí lao động xã hội cần thiết. Để sinh tồn trước quy luật cạnh tranh khốc liệt, chủ thể kinh tế buộc phải tính toán duy lý và tối ưu hóa tích lũy cá nhân.',
   },
   {
     id: 'pat_vong_xoay_no_nan',
@@ -72,6 +88,9 @@ export const REFLECTION_PATTERNS: ReflectionPattern[] = [
     sinhVanBan: (state) =>
       `Cuộc đời đặt lên vai bạn những bài toán chi tiêu quá ngặt nghèo ngay từ vạch xuất phát. Mỗi đồng tiền làm ra dường như đều có địa chỉ phải trả trước khi kịp ấm túi. Bạn đã chiến đấu đến cùng trước những con số nợ nần và lãi phạt, cho thấy sức bền kinh ngạc của một con người bình dân trước sóng gió đời sống.`,
     gocTrietHoc: 'Sự phụ thuộc vào tư bản cho vay và bẫy tín dụng tiêu dùng đối với người lao động.',
+    chuongGiaoTrinh: 'Chương 2 · Chức năng phương tiện thanh toán của tiền tệ',
+    luanDiemGiaoTrinh:
+      'Khi tiền làm phương tiện thanh toán gắn liền với chế độ tín dụng thương mại, sự tách biệt giữa hành vi mua và bán tiềm ẩn nguy cơ khủng hoảng thanh khoản và bẫy nợ dồn dập đối với người lao động thu nhập thấp.',
   },
   {
     id: 'pat_giu_gin_pham_gia',
@@ -82,6 +101,9 @@ export const REFLECTION_PATTERNS: ReflectionPattern[] = [
     sinhVanBan: (state) =>
       `Dù có những thời điểm bát cơm mưu sinh bị đe dọa, bạn đã chọn con đường không hổ thẹn với lương tâm. Bạn từ chối dùng hóa chất độc hại, từ chối lừa dối người tiêu dùng. Có thể số tiền bạn kiếm được không bằng người khác, nhưng mỗi đồng bạn tiêu đều mang sự thanh thản vô giá.`,
     gocTrietHoc: 'Hai thuộc tính của hàng hóa: Giá trị sử dụng đích thực bảo vệ phẩm giá người sản xuất.',
+    chuongGiaoTrinh: 'Chương 2 · Khuyết tật của KTTT & Trách nhiệm xã hội',
+    luanDiemGiaoTrinh:
+      'Giáo trình phân tích: Vì động cơ tối đa hóa lợi nhuận, KTTT tiềm ẩn khuyết tật xói mòn đạo đức và gian lận. Người sản xuất chân chính phải thực hiện trách nhiệm đạo đức, cung ứng giá trị sử dụng lành mạnh cho xã hội.',
   },
   {
     id: 'pat_song_vi_the_he_sau',
@@ -92,6 +114,9 @@ export const REFLECTION_PATTERNS: ReflectionPattern[] = [
     sinhVanBan: (state) =>
       `Khoản tiền dưỡng già cuối cùng bạn cũng dành trọn cho con cái bước vào đời. Bạn chấp nhận sự bấp bênh của tuổi xế chiều để thế hệ sau có cơ hội đứng cao hơn mình một bậc. Tình thương ấy là sự tiếp nối bất tận của dòng chảy nhân sinh.`,
     gocTrietHoc: 'Tái sản xuất sức lao động liên thế hệ trong điều kiện kinh tế khó khăn.',
+    chuongGiaoTrinh: 'Chương 3 · Quy luật tái sản xuất sức lao động',
+    luanDiemGiaoTrinh:
+      'Tái sản xuất sức lao động không chỉ là duy trì cơ thể người lao động hiện tại, mà còn là đầu tư đào tạo thế hệ lao động kế cận nhằm nâng cao trình độ thành thạo và năng lực cạnh tranh trong phân công lao động.',
   },
   {
     id: 'pat_nhip_song_ben_bi',
@@ -102,6 +127,9 @@ export const REFLECTION_PATTERNS: ReflectionPattern[] = [
     sinhVanBan: (state) =>
       `Giữa lúc người xung quanh hối hả vắt kiệt sức lực vào những ca làm xuyên đêm, bạn chọn giữ lấy nhịp sống điều độ. Nhờ biết lắng nghe tiếng kêu cứu của cơ thể, đến tuổi ${state.profile.tuoi} bạn vẫn giữ được tinh thần minh mẫn và đôi chân vững vàng.`,
     gocTrietHoc: 'Bảo toàn giá trị sức lao động trước nguy cơ hao mòn quá độ.',
+    chuongGiaoTrinh: 'Chương 3 · Giới hạn sinh học của ngày lao động',
+    luanDiemGiaoTrinh:
+      'C. Mác khẳng định ngày lao động chịu giới hạn tự nhiên về thể chất và tinh thần (ngủ nghỉ, ăn uống, tái tạo sinh lực). Vượt quá giới hạn này, sức lao động bị tàn phá không thể phục hồi.',
   },
   {
     id: 'pat_buoc_chan_ly_huong',
@@ -112,6 +140,9 @@ export const REFLECTION_PATTERNS: ReflectionPattern[] = [
     sinhVanBan: (state) =>
       `Chuyến xe rời ${state.profile.diaPhuong} năm 18 tuổi đã mở ra những tháng ngày lăn lộn ở dãy trọ chật hẹp. Bạn quen với tiếng còi ca máy, quen với những cái Tết gói ghém gửi quà về quê, trở thành một phần lặng lẽ nhưng không thể thiếu của dòng người lao động nhập cư.`,
     gocTrietHoc: 'Quá trình di dịch lao động nông thôn ra đô thị trong công nghiệp hóa.',
+    chuongGiaoTrinh: 'Chương 3 · Điều kiện sức lao động biến thành hàng hóa',
+    luanDiemGiaoTrinh:
+      'Người lao động không có đủ tư liệu sản xuất tại quê nhà buộc phải gia nhập thị trường sức lao động tự do tại các vùng công nghiệp đô thị, bán sức lao động để đổi lấy tiền công sinh tồn.',
   },
   {
     id: 'pat_re_bam_dat_que',
@@ -122,6 +153,9 @@ export const REFLECTION_PATTERNS: ReflectionPattern[] = [
     sinhVanBan: (state) =>
       `Bạn chọn ở lại ${state.profile.diaPhuong} dẫu biết đồng tiền kiếm được không nhiều. Đổi lại cho sự chật vật kinh tế là những bữa cơm chiều đầy đủ thành viên, là sự hiện diện kịp thời bên người thân mỗi lúc trái gió trở trời.`,
     gocTrietHoc: 'Mối quan hệ giữa tái sản xuất cộng đồng nông thôn và thu nhập sinh kế.',
+    chuongGiaoTrinh: 'Chương 2 · Phân công lao động xã hội & Sản xuất tiểu nông',
+    luanDiemGiaoTrinh:
+      'Kinh tế hộ nông thôn giữ vai trò tái sản xuất đời sống cộng đồng tự nhiên, hạn chế tính tách biệt khắc nghiệt của cơ chế thị trường thuần túy.',
   },
   {
     id: 'pat_tam_luoi_an_sinh',
@@ -132,6 +166,9 @@ export const REFLECTION_PATTERNS: ReflectionPattern[] = [
     sinhVanBan: (state) =>
       `Từ sớm bạn đã chấp nhận trích một phần tiền lương ít ỏi để đóng bảo hiểm xã hội. Quyết định ấy giúp bạn tránh được nhiều cú sốc viện phí bất ngờ và có được sự chủ động nhất định khi bước qua sườn dốc tuổi lao động.`,
     gocTrietHoc: 'Vai trò của quỹ bảo hiểm xã hội trong việc tái sản xuất sức lao động.',
+    chuongGiaoTrinh: 'Chương 2 · Vai trò kinh tế của Nhà nước trong KTTT',
+    luanDiemGiaoTrinh:
+      'Nhà nước can thiệp thiết lập lưới an sinh bảo hiểm xã hội nhằm điều tiết phân phối lại, sửa chữa khuyết tật bất bình đẳng và bảo trợ người lao động khi hết tuổi lao động.',
   },
   {
     id: 'pat_ban_tay_tho_lanh_nghe',
@@ -142,6 +179,9 @@ export const REFLECTION_PATTERNS: ReflectionPattern[] = [
     sinhVanBan: (state) =>
       `Những ngày tháng ăn mì gói phụ việc trong xưởng ${state.profile.ngheNghiep} thuở mười tám đã trui rèn cho bạn cái nghề vững chắc trong tay. Khi thị trường biến động, chính tay nghề kỹ thuật chuyên môn chứ không phải sức bắp đã giúp bạn đứng vững.`,
     gocTrietHoc: 'Chuyển hóa từ lao động giản đơn sang lao động phức tạp tạo giá trị cao hơn.',
+    chuongGiaoTrinh: 'Chương 2 · Lao động giản đơn và lao động phức tạp',
+    luanDiemGiaoTrinh:
+      'Giáo trình quy định: Trong cùng một đơn vị thời gian, lao động phức tạp tạo ra nhiều giá trị hơn so với lao động giản đơn. Lao động phức tạp là lao động giản đơn được nhân bội lên, tạo nền tảng thu nhập vượt trội.',
   },
   {
     id: 'pat_tri_thuc_tinh_hoa',
@@ -152,6 +192,9 @@ export const REFLECTION_PATTERNS: ReflectionPattern[] = [
     sinhVanBan: (state) =>
       `Được thừa hưởng nền tảng học vấn vững chãi từ gia đình trí thức tại ${state.profile.diaPhuong}, bạn đã chọn con đường dấn thân nghiên cứu và phát triển chuyên môn sâu. Bạn nhận thức rõ đặc quyền văn hóa của mình và không ngừng nỗ lực biến tri thức thành công cụ cải thiện đời sống cộng đồng.`,
     gocTrietHoc: 'Lao động trí óc phức tạp, quá trình tái sản xuất sức lao động chất lượng cao và trách nhiệm xã hội của tầng lớp trí thức.',
+    chuongGiaoTrinh: 'Chương 2 & 3 · Phí tổn đào tạo & Lao động trí tuệ chất lượng cao',
+    luanDiemGiaoTrinh:
+      'Lao động trí óc chuyên sâu đòi hỏi phí tổn đào tạo lớn và tích lũy tri thức kế thừa. Đây là động lực chủ đạo để nâng cao năng suất lao động xã hội và thúc đẩy tiến bộ khoa học kỹ thuật.',
   },
   {
     id: 'pat_van_hanh_tu_ban',
@@ -162,6 +205,9 @@ export const REFLECTION_PATTERNS: ReflectionPattern[] = [
     sinhVanBan: (state) =>
       `Kế thừa và phát triển tiềm lực kinh tế của gia đình, bạn đã trực tiếp đối mặt với quy luật cung cầu, cạnh tranh gay gắt và bài toán quản lý dòng vốn tư bản. Giữa lợi nhuận và trách nhiệm với hàng chục nhân sự, bạn đã định hình được triết lý kinh doanh của một nhà quản trị bản lĩnh.`,
     gocTrietHoc: 'Quy luật tích tụ, tập trung tư bản và trách nhiệm điều tiết quan hệ giữa chủ tư bản và người lao động.',
+    chuongGiaoTrinh: 'Chương 3 · Công thức chung của tư bản & Tích lũy tư bản',
+    luanDiemGiaoTrinh:
+      'Tư bản vận động theo công thức T - H - T\' nhằm tạo ra giá trị thặng dư trội hơn (T\' = T + t). Việc kết hợp hiệu quả giữa tư bản bất biến (c - nhà xưởng, máy móc) và tư bản khả biến (v - tiền công) quyết định sức cạnh tranh của doanh nghiệp.',
   },
   {
     id: 'pat_nga_ngua_dinh_cao',
@@ -172,6 +218,9 @@ export const REFLECTION_PATTERNS: ReflectionPattern[] = [
     sinhVanBan: (state) =>
       `Khởi đầu từ vị thế tầng lớp trên với muôn vàn ưu thế, bạn đã bước vào những ván cược khổng lồ của đòn bẩy tài chính hoặc quyền lực học thuật ngầm. Nhưng quy luật khắc nghiệt đã chứng minh: càng đứng ở vị trí cao ngất ngưởng, cú rơi tự do càng trở nên chấn động và đau đớn khôn cùng. Mất đi khối tài sản hàng trăm triệu và danh tiếng cả đời, bạn thấm thía cái giá nghiệt ngã của sự tham lam và tha hóa.`,
     gocTrietHoc: 'Khủng hoảng cơ cấu do đòn bẩy tài chính tư bản quá mức, sự tha hóa quyền lực và cái giá mang tính quy luật khi bất chấp chuẩn mực đạo đức kinh tế.',
+    chuongGiaoTrinh: 'Chương 2 & 3 · Khuyết tật KTTT & Nguy cơ khủng hoảng của "Tư bản giả"',
+    luanDiemGiaoTrinh:
+      'C. Mác chỉ rõ: Chứng khoán và đòn bẩy tài chính không dựa trên sản xuất thực là dạng "tư bản giả". Khi tham vọng thâu tóm vượt quá khả năng thanh khoản của nền kinh tế thực, khủng hoảng vỡ nợ mang tính quy luật tất yếu sẽ quét sạch của cải tích lũy.',
   },
 ];
 
@@ -194,6 +243,8 @@ export function evaluateReflection(state: LifeState): LifeReflectionReport {
     ten: p.tenMoThuc,
     moTaNgan: p.moTaNgan,
     doanNhinLai: p.sinhVanBan(state),
+    chuongGiaoTrinh: p.chuongGiaoTrinh,
+    luanDiemGiaoTrinh: p.luanDiemGiaoTrinh,
   }));
 
   // Tạo câu hỏi mở không có đáp án đúng/sai
@@ -204,9 +255,12 @@ export function evaluateReflection(state: LifeState): LifeReflectionReport {
     cauHoiMo = 'Sống trọn một đời vì gia đình và chòm xóm, liệu trong sâu thẳm bạn có bao giờ nuối tiếc một ước mơ riêng chưa từng được cất cánh?';
   }
 
-  // Góc nhìn kinh tế chính trị ngắn gọn (1-2 câu tham chiếu)
+  // Góc nhìn kinh tế chính trị chuẩn xác từ Giáo trình Bộ GD&ĐT
   const gocKinhTeChinhTri =
-    'Một góc nhìn để chiêm nghiệm: Dưới lăng kính Kinh tế chính trị Mác - Lênin, mỗi lựa chọn sinh kế của bạn không chỉ là tính cách cá nhân, mà là sự phản ánh trực tiếp của vị trí người lao động trước áp lực sinh tồn, tích lũy và quan hệ phân phối trong xã hội.';
+    'Chiêm nghiệm theo Giáo trình Kinh tế chính trị Mác - Lênin (Bộ GD&ĐT, 2021):\n' +
+    '• Chương 1 (Đối tượng & Phương pháp): Toàn bộ kiếp nhân sinh của bạn không phải là một chuỗi biến cố ngẫu nhiên, mà là sự phản chiếu sâu sắc của các quan hệ xã hội trong sản xuất và trao đổi gắn với phương thức sản xuất.\n' +
+    '• Chương 2 (Hàng hóa & Thị trường): Quy luật giá trị và quy luật cạnh tranh liên tục đào thải cái lạc hậu, điều tiết dòng vốn và phân hóa giàu nghèo một cách tự nhiên giữa các giai cấp.\n' +
+    '• Chương 3 (Giá trị thặng dư): Sức lao động là thứ hàng hóa đặc biệt duy nhất biết tạo ra giá trị mới lớn hơn bản thân nó. Dù đứng ở vị thế người bán sức lao động hay chủ sở hữu dòng vốn T - H - T\', quy luật tích lũy và hao mòn sinh học luôn đòi hỏi sự trả giá sòng phẳng.';
 
   const tieuDeCuocDoi = `${state.profile.ten} (${state.profile.namSinh} - ${state.profile.namSinh + state.profile.tuoi})`;
 

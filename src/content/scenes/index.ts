@@ -9,6 +9,7 @@ export const LIFE_SCENES: LifeScene[] = [
     tieuDe: 'Ngã rẽ đầu đời',
     giaiDoanTuoi: [18, 20],
     trongSo: 10,
+    chuDeKTCT: 'Chương 2: Lao động giản đơn & Lao động phức tạp',
     dieuKien: (state) => !['tri_thuc_tinh_hoa', 'doanh_nhan_thanh_dat'].includes(state.profile.xuatThan),
     vanBan:
       'Vừa tròn 18 tuổi, bạn đứng trước xưởng sửa chữa điện lạnh gần bến xe. Chủ xưởng nhận bạn vào vừa học nghề vừa phụ kho, mỗi tháng chỉ có 2,5 triệu tiền phụ cấp và phải học ban đêm ròng rã hơn một năm. Cách đó vài trăm mét, một kho hàng tư nhân đang tuyển nhân công bốc xếp thời vụ, trả tiền tươi 300.000đ mỗi ngày.',
@@ -17,6 +18,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_hoc_nghe_dien_lanh',
         vanBan: 'Vào xưởng học nghề điện lạnh, chấp nhận ăn mì gói để lấy cái nghề lâu dài.',
         moTaHauQuaNgan: 'Thu nhập ít ỏi, nhưng tay nghề được nâng cao dần.',
+        khaiNiemKTCT: 'Chuyển hóa Lao động phức tạp',
         tacDong: {
           tienMatDelta: -2000000,
           sucKhoeDelta: 0,
@@ -32,6 +34,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_boc_vac_tien_tuoi',
         vanBan: 'Đi bốc vác kho hàng lấy tiền tươi gửi về đỡ đần bố mẹ ngay.',
         moTaHauQuaNgan: 'Có tiền ngay trong túi, nhưng hao mòn lưng áo và khớp xương.',
+        khaiNiemKTCT: 'Lao động giản đơn & Hao mòn sinh học',
         tacDong: {
           tienMatDelta: 6000000,
           sucKhoeDelta: -15,
@@ -49,6 +52,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Theo chân chú thợ cả cùng quê vào xưởng cơ khí gần đó phụ việc, được bao ăn ở.',
         moTaHauQuaNgan: 'Tiền công thấp nhưng không tốn tiền trọ và có người quê dìu dắt.',
         nhanDacBiet: 'Tình nghĩa Đồng hương',
+        khaiNiemKTCT: 'Tương trợ tiểu nông & Học việc',
         dieuKien: (state) => state.profile.xuatThan === 'nong_thon_ngheo',
         tacDong: {
           tienMatDelta: 2000000,
@@ -67,6 +71,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Tận dụng rành đường phố chạy giao hàng ca ngày, buổi tối đi học chứng chỉ sửa chữa điện tử.',
         moTaHauQuaNgan: 'Lịch trình dày đặc, vừa có tiền trang trải vừa tích lũy tay nghề.',
         nhanDacBiet: 'Lợi thế Đô thị',
+        khaiNiemKTCT: 'Tích lũy kỹ năng kép đô thị',
         dieuKien: (state) => state.profile.xuatThan === 'lao_dong_do_thi',
         tacDong: {
           tienMatDelta: 4000000,
@@ -85,6 +90,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Phụ cửa hàng gia đình ban ngày, trích vốn nhà đăng ký học cao đẳng kế toán buổi tối.',
         moTaHauQuaNgan: 'Tránh được lao động chân tay nặng nhọc, nâng tầm bằng cấp quản lý.',
         nhanDacBiet: 'Nền tảng Tiểu tư sản',
+        khaiNiemKTCT: 'Đầu tư chi phí đào tạo sức lao động',
         dieuKien: (state) => state.profile.xuatThan === 'tieu_tu_san',
         tacDong: {
           tienMatDelta: -4000000,
@@ -105,6 +111,7 @@ export const LIFE_SCENES: LifeScene[] = [
     tieuDe: 'Cánh cửa học thuật',
     giaiDoanTuoi: [18, 20],
     trongSo: 12,
+    chuDeKTCT: 'Chương 2 & 3: Phí tổn đào tạo sức lao động chất lượng cao',
     dieuKien: (state) => state.profile.xuatThan === 'tri_thuc_tinh_hoa',
     vanBan:
       'Tốt nghiệp trường chuyên với thành tích xuất sắc, bạn nhận được thư mời học bổng bán phần từ một đại học danh tiếng ở nước ngoài (gia đình cần bù 40 triệu sinh hoạt phí năm đầu). Cùng lúc đó, giáo sư đầu ngành quen biết với cha mẹ đề xuất đưa bạn vào thẳng phòng lab trọng điểm trong nước làm trợ lý nghiên cứu.',
@@ -114,6 +121,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Dùng quỹ học vấn gia đình chi 40 triệu sang nước ngoài du học, theo đuổi chuẩn mực quốc tế.',
         moTaHauQuaNgan: 'Tốn kém ban đầu nhưng mở rộng tầm nhìn và giá trị bằng cấp toàn cầu.',
         nhanDacBiet: 'Đặc quyền Trí thức',
+        khaiNiemKTCT: 'Quốc tế hóa giá trị sức lao động',
         tacDong: {
           tienMatDelta: -40000000,
           sucKhoeDelta: -5,
@@ -131,6 +139,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Ở lại đại học trọng điểm trong nước, vào thẳng phòng lab nghiên cứu cùng mạng lưới giáo sư.',
         moTaHauQuaNgan: 'Giữ vững nền tảng tài chính, bồi đắp quan hệ học thuật bền chặt trong nước.',
         nhanDacBiet: 'Bệ phóng Học thuật',
+        khaiNiemKTCT: 'Lao động nghiên cứu khoa học',
         tacDong: {
           tienMatDelta: -5000000,
           sucKhoeDelta: 5,
@@ -148,6 +157,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Ứng tuyển vào chương trình kỹ sư tài năng của tập đoàn công nghệ lớn, thương mại hóa chất xám sớm.',
         moTaHauQuaNgan: 'Nhận mức lương cao ngay từ ghế nhà trường, chấp nhận áp lực KPI khốc liệt.',
         nhanDacBiet: 'Chuyên gia Công nghệ',
+        khaiNiemKTCT: 'Thương mại hóa sức lao động trí tuệ',
         tacDong: {
           tienMatDelta: 18000000,
           sucKhoeDelta: -10,
@@ -167,6 +177,7 @@ export const LIFE_SCENES: LifeScene[] = [
     tieuDe: 'Bàn giao chìa khóa xưởng',
     giaiDoanTuoi: [18, 20],
     trongSo: 12,
+    chuDeKTCT: 'Chương 3: Công thức chung của tư bản T - H - T\' & Tích tụ tư bản',
     dieuKien: (state) => state.profile.xuatThan === 'doanh_nhan_thanh_dat',
     vanBan:
       'Tuổi 18, cha mẹ giao cho bạn quyền tiếp cận dòng vốn 80 triệu đồng cùng mạng lưới bạn hàng lâu năm của công ty gia đình. Bạn có thể vào xưởng trực tiếp giám sát quy trình sản xuất 30 công nhân, hoặc tách vốn lập công ty thương mại riêng để tự thử lửa.',
@@ -176,6 +187,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Về xưởng giữ chức phó quản lý sản xuất, học cách tối ưu chi phí lao động và vận hành dây chuyền.',
         moTaHauQuaNgan: 'Nắm giữ tư liệu sản xuất sẵn có, sớm đối diện bài toán quan hệ chủ - thợ.',
         nhanDacBiet: 'Kế thừa Tư bản',
+        khaiNiemKTCT: 'Kế thừa & Quản trị tư bản (c + v)',
         tacDong: {
           tienMatDelta: 30000000,
           sucKhoeDelta: -5,
@@ -193,6 +205,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Rút 60 triệu tự lập công ty thương mại điện tử độc lập, khẳng định năng lực không dựa dẫm gia tộc.',
         moTaHauQuaNgan: 'Tự do sáng tạo mô hình mới nhưng đối diện nguy cơ mất vốn trên thương trường.',
         nhanDacBiet: 'Khởi nghiệp Tự chủ',
+        khaiNiemKTCT: 'Tự do cạnh tranh & Rủi ro thương trường',
         tacDong: {
           tienMatDelta: -60000000,
           sucKhoeDelta: -10,
@@ -210,6 +223,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Góp 50 triệu làm cổ đông vào chuỗi phân phối của đối tác thân thiết để hưởng cổ tức thụ động.',
         moTaHauQuaNgan: 'Dòng tiền sinh lời nhàn nhã qua sở hữu cổ phần, mở rộng quan hệ giới thượng lưu.',
         nhanDacBiet: 'Sở hữu Cổ phần',
+        khaiNiemKTCT: 'Chiếm hữu giá trị thặng dư qua cổ phần',
         tacDong: {
           tienMatDelta: -40000000,
           sucKhoeDelta: 5,
@@ -229,6 +243,7 @@ export const LIFE_SCENES: LifeScene[] = [
     tieuDe: 'Chuyến xe rời quê',
     giaiDoanTuoi: [18, 21],
     trongSo: 8,
+    chuDeKTCT: 'Chương 3: Điều kiện để sức lao động biến thành hàng hóa',
     dieuKien: (state) => state.profile.xuatThan === 'nong_thon_ngheo',
     vanBan:
       'Mấy anh chị trong xóm rủ nhau bắt xe đò vào khu công nghiệp phía Nam làm công nhân may và lắp ráp linh kiện điện tử. Mẹ bạn bị đau khớp kinh niên, muốn bạn ở lại phụ việc đồng áng và làm thuê gần nhà, dù thu nhập ở quê bấp bênh theo mùa vụ.',
@@ -237,6 +252,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_di_khu_cong_nghiep',
         vanBan: 'Xách túi vải lên chuyến xe đêm vào khu công nghiệp tìm lối thoát nghèo.',
         moTaHauQuaNgan: 'Bắt đầu cuộc sống phòng trọ công nhân xa xứ.',
+        khaiNiemKTCT: 'Di chuyển sức lao động công nghiệp',
         tacDong: {
           tienMatDelta: 3000000,
           sucKhoeDelta: -5,
@@ -253,6 +269,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_o_lai_que_cham_me',
         vanBan: 'Ở lại quê làm thuê nhật trình, sớm hôm có bát cơm nóng bên mẹ.',
         moTaHauQuaNgan: 'Kinh tế eo hẹp nhưng gia đình sum vầy ấm cúng.',
+        khaiNiemKTCT: 'Tái sản xuất cộng đồng nông thôn',
         tacDong: {
           tienMatDelta: -1000000,
           sucKhoeDelta: 5,
@@ -272,6 +289,7 @@ export const LIFE_SCENES: LifeScene[] = [
     tieuDe: 'Chiếc điện thoại thông minh',
     giaiDoanTuoi: [20, 23],
     trongSo: 9,
+    chuDeKTCT: 'Chương 2: Chức năng phương tiện thanh toán & Bẫy tín dụng',
     dieuKien: (state) => !['tri_thuc_tinh_hoa', 'doanh_nhan_thanh_dat'].includes(state.profile.xuatThan),
     vanBan:
       'Để nhận đơn giao hàng công nghệ hoặc trao đổi việc làm, bạn bắt buộc phải có điện thoại thông minh. Chiếc máy cũ nát đã sập nguồn hoàn toàn. Cửa hàng ven đường đon đả mời bạn mua máy mới giá 7,5 triệu bằng cách trả góp qua ứng dụng tài chính với lãi suất mập mờ, chỉ cần đóng trước 0 đồng.',
@@ -280,6 +298,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_vay_app_mua_may',
         vanBan: 'Ký hồ sơ vay ứng dụng tài chính mua máy mới toanh để chạy việc mượt mà.',
         moTaHauQuaNgan: 'Có máy xịn dùng ngay, nhưng gánh khoản nợ hàng tháng.',
+        khaiNiemKTCT: 'Tín dụng tiêu dùng & Nợ phụ thuộc',
         tacDong: {
           tienMatDelta: 0,
           sucKhoeDelta: 0,
@@ -295,6 +314,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_mua_may_cu_re',
         vanBan: 'Tìm mua lại chiếc điện thoại cũ nứt vỏ giá 1,2 triệu từ một người bạn.',
         moTaHauQuaNgan: 'Tiết kiệm được tiền nợ, chấp nhận máy giật lag đôi chút.',
+        khaiNiemKTCT: 'Tiết kiệm chi phí tư liệu sinh hoạt',
         tacDong: {
           tienMatDelta: -1200000,
           sucKhoeDelta: 0,
@@ -311,6 +331,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Trích 5,5 triệu tiền tích lũy mua đứt điện thoại tầm trung chất lượng tốt, từ chối vay trả góp.',
         moTaHauQuaNgan: 'Bảo toàn sự an toàn tài chính, trang bị công cụ làm ăn bền bỉ.',
         nhanDacBiet: 'Vốn Tích lũy',
+        khaiNiemKTCT: 'Tư liệu lao động & Tự chủ tài chính',
         dieuKien: (state) => state.profile.xuatThan === 'tieu_tu_san',
         tacDong: {
           tienMatDelta: -5500000,
@@ -330,6 +351,7 @@ export const LIFE_SCENES: LifeScene[] = [
     tieuDe: 'Trang bị công nghệ',
     giaiDoanTuoi: [20, 23],
     trongSo: 11,
+    chuDeKTCT: 'Chương 2 & 3: Tư liệu lao động hiện đại & Năng suất lao động cá biệt',
     dieuKien: (state) => ['tri_thuc_tinh_hoa', 'doanh_nhan_thanh_dat'].includes(state.profile.xuatThan),
     vanBan:
       'Bước vào năm thứ ba đại học hoặc bắt đầu quản lý kinh doanh, chiếc máy tính cá nhân và công cụ số trở thành phương tiện sản xuất tri thức và giao dịch sống còn. Bạn cần quyết định mức độ đầu tư vào trang thiết bị làm việc của mình.',
@@ -339,6 +361,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Đầu tư 25 triệu mua máy trạm xách tay cấu hình cao phục vụ chạy mô hình và xử lý dữ liệu nghiên cứu.',
         moTaHauQuaNgan: 'Nâng cao đột phá hiệu suất làm việc trí tuệ, tạo tiền đề công bố công trình.',
         nhanDacBiet: 'Công cụ Chuyên gia',
+        khaiNiemKTCT: 'Công cụ lao động trí tuệ chuyên sâu',
         dieuKien: (state) => state.profile.xuatThan === 'tri_thuc_tinh_hoa',
         tacDong: {
           tienMatDelta: -25000000,
@@ -357,6 +380,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Chi 35 triệu mua thiết bị cao cấp và bản quyền phần mềm quản lý kho vận, dòng tiền xưởng sản xuất.',
         moTaHauQuaNgan: 'Số hóa quản trị xưởng, kiểm soát chặt chẽ hao hụt nguyên liệu và năng suất lao động.',
         nhanDacBiet: 'Quản trị Số hóa',
+        khaiNiemKTCT: 'Tư bản bất biến công nghệ cao',
         dieuKien: (state) => state.profile.xuatThan === 'doanh_nhan_thanh_dat',
         tacDong: {
           tienMatDelta: -35000000,
@@ -374,6 +398,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_elite_tiet_kiem_dung_may_cu',
         vanBan: 'Tiếp tục dùng máy tính cũ của gia đình để dành vốn tiền mặt cho các cơ hội đầu tư khác.',
         moTaHauQuaNgan: 'Bảo toàn lượng tiền mặt lớn, chấp nhận máy móc xử lý chậm hơn.',
+        khaiNiemKTCT: 'Bảo toàn thanh khoản tiền mặt',
         tacDong: {
           tienMatDelta: 0,
           sucKhoeDelta: 0,
@@ -395,6 +420,7 @@ export const LIFE_SCENES: LifeScene[] = [
     tieuDe: 'Tiếng còi ca đêm',
     giaiDoanTuoi: [23, 27],
     trongSo: 10,
+    chuDeKTCT: 'Chương 3: Sản xuất giá trị thặng dư tuyệt đối & Độ dài ngày lao động',
     dieuKien: (state) => !['tri_thuc_tinh_hoa', 'doanh_nhan_thanh_dat'].includes(state.profile.xuatThan),
     vanBan:
       'Đợt mua sắm cuối năm, kho bãi quá tải hàng hóa. Quản lý thông báo cần người cày ca đêm từ 22 giờ đến 6 giờ sáng hôm sau, trả 650.000đ mỗi ca cho người cam kết làm trọn 15 đêm liền. Bạn đã xong ca ngày 10 tiếng, hai hốc mắt cay xè và vai áo đẫm mồ hôi muối.',
@@ -403,6 +429,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_cay_ca_dem',
         vanBan: 'Gật đầu nhận trọn 15 ca đêm để gom một cục tiền tiêu Tết.',
         moTaHauQuaNgan: 'Ví tiền dày lên trông thấy, nhưng cơ thể báo động kiệt sức.',
+        khaiNiemKTCT: 'Thặng dư tuyệt đối & Tự bóc lột kiệt cùng',
         tacDong: {
           tienMatDelta: 9750000,
           sucKhoeDelta: -25,
@@ -419,6 +446,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_ve_phong_tro_nghi',
         vanBan: 'Từ chối làm đêm, về phòng trọ nấu nồi canh rau ăn cùng bạn bè.',
         moTaHauQuaNgan: 'Giữ được giấc ngủ trọn vẹn và nhịp thở thong dong.',
+        khaiNiemKTCT: 'Bảo toàn giới hạn sinh học sức lao động',
         tacDong: {
           tienMatDelta: 0,
           sucKhoeDelta: 10,
@@ -438,6 +466,7 @@ export const LIFE_SCENES: LifeScene[] = [
     tieuDe: 'Áp lực tiến độ',
     giaiDoanTuoi: [23, 27],
     trongSo: 11,
+    chuDeKTCT: 'Chương 3: Cường độ lao động trí óc & Năng suất lao động',
     dieuKien: (state) => ['tri_thuc_tinh_hoa', 'doanh_nhan_thanh_dat'].includes(state.profile.xuatThan),
     vanBan:
       'Dự án trọng điểm bước vào giai đoạn nước rút. Trí tuệ và năng lực quản lý của bạn bị thử thách tột cùng: hoặc thức trắng nhiều tuần để giải quyết bài toán kỹ thuật/đơn hàng xuất khẩu, hoặc lùi hạn chót chấp nhận giảm uy tín chuyên môn.',
@@ -447,6 +476,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Thức trắng đêm tại lab hoàn thiện bài báo gửi tạp chí khoa học quốc tế (Q1).',
         moTaHauQuaNgan: 'Tiêu hao thể lực chất xám, đổi lại vị thế học thuật được quốc tế công nhận.',
         nhanDacBiet: 'Cống hiến Trí tuệ',
+        khaiNiemKTCT: 'Cường độ lao động trí tuệ cực hạn',
         dieuKien: (state) => state.profile.xuatThan === 'tri_thuc_tinh_hoa',
         tacDong: {
           tienMatDelta: 12000000,
@@ -465,6 +495,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Trực tiếp bám trụ phân xưởng chỉ đạo ca kíp, trích 15 triệu thưởng nóng động viên anh em công nhân.',
         moTaHauQuaNgan: 'Chi phí phát sinh nhưng giữ đúng hẹn đơn hàng xuất khẩu và được lòng người lao động.',
         nhanDacBiet: 'Quản trị Nhân tâm',
+        khaiNiemKTCT: 'Kích thích năng suất bằng tiền công',
         dieuKien: (state) => state.profile.xuatThan === 'doanh_nhan_thanh_dat',
         tacDong: {
           tienMatDelta: 35000000,
@@ -482,6 +513,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_elite_can_bang_suc_khoe',
         vanBan: 'Điều chỉnh giãn tiến độ hợp lý, từ chối tăng ca kiệt quệ để bảo vệ sức khỏe và tinh thần.',
         moTaHauQuaNgan: 'Thu nhập và thành tích tăng chậm hơn, đổi lại nhịp sống điều độ bền bỉ.',
+        khaiNiemKTCT: 'Tái sản xuất sức lao động bền bỉ',
         tacDong: {
           tienMatDelta: 5000000,
           sucKhoeDelta: 15,
@@ -500,6 +532,7 @@ export const LIFE_SCENES: LifeScene[] = [
     tieuDe: 'Chiếc xe cà tàng',
     giaiDoanTuoi: [24, 28],
     trongSo: 9,
+    chuDeKTCT: 'Chương 2: Hao mòn tư liệu lao động & Chi phí an toàn',
     dieuKien: (state) => !['tri_thuc_tinh_hoa', 'doanh_nhan_thanh_dat'].includes(state.profile.xuatThan),
     vanBan:
       'Phương tiện đi lại mưu sinh bắt đầu xuống cấp sau nhiều năm hoạt động trên đường phố. Một quyết định về an toàn giao thông và chi phí bảo dưỡng cần được đưa ra.',
@@ -508,6 +541,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_sua_xe_an_toan',
         vanBan: 'Rút 1,6 triệu thay thế phụ tùng phanh và nhông xích đàng hoàng để bảo vệ an toàn tính mạng.',
         moTaHauQuaNgan: 'Tiền tích lũy vơi đi, nhưng yên tâm trên từng chặng đường.',
+        khaiNiemKTCT: 'Bảo dưỡng tư liệu lao động sống',
         tacDong: {
           tienMatDelta: -1600000,
           sucKhoeDelta: 5,
@@ -523,6 +557,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_chay_lieu_tiet_kiem',
         vanBan: 'Châm nhớt thải đi tạm, dành 1,6 triệu để xoay xở tiền nhà cuối tháng.',
         moTaHauQuaNgan: 'Giữ được tiền trước mắt, đánh cược tính mạng trên phố đông.',
+        khaiNiemKTCT: 'Khấu hao quá mức & Rủi ro tai nạn',
         tacDong: {
           tienMatDelta: -30000,
           sucKhoeDelta: -10,
@@ -541,6 +576,7 @@ export const LIFE_SCENES: LifeScene[] = [
     tieuDe: 'Lá thư từ quê nhà',
     giaiDoanTuoi: [25, 29],
     trongSo: 8,
+    chuDeKTCT: 'Chương 3: Cấu thành giá trị sức lao động (Chi phí nuôi thế hệ kế cận)',
     dieuKien: (state) => !['tri_thuc_tinh_hoa', 'doanh_nhan_thanh_dat'].includes(state.profile.xuatThan),
     vanBan:
       'Em gái bạn nhận giấy báo trúng tuyển cao đẳng trên thành phố, cần đóng học phí kỳ đầu và tiền cọc phòng trọ. Gia đình rất cần sự trợ lực kịp thời của bạn trong bước ngoặt này.',
@@ -549,6 +585,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_gui_het_cho_em',
         vanBan: 'Chuyển ngay 12 triệu cho em gái ăn học, gác lại dự định của riêng mình.',
         moTaHauQuaNgan: 'Gia đình nhẹ nhõm, ước mơ riêng của bạn phải chờ thêm vài năm.',
+        khaiNiemKTCT: 'Đầu tư đào tạo nguồn nhân lực gia đình',
         tacDong: {
           tienMatDelta: -12000000,
           sucKhoeDelta: 0,
@@ -565,6 +602,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_chi_gui_mot_phan',
         vanBan: 'Chỉ gửi phụ 3 triệu, khuyên em vừa đi học vừa xin việc làm thêm tự trang trải.',
         moTaHauQuaNgan: 'Bảo toàn vốn cá nhân, nhưng bố mẹ ở quê có phần hụt hẫng.',
+        khaiNiemKTCT: 'Tối ưu tích lũy tư nhân',
         tacDong: {
           tienMatDelta: -3000000,
           sucKhoeDelta: 0,
@@ -583,6 +621,7 @@ export const LIFE_SCENES: LifeScene[] = [
           'Trích 20 triệu từ quỹ riêng giúp em học trọn năm đầu, đồng thời sắp xếp chỗ làm thêm ổn định tại cửa hàng quen.',
         moTaHauQuaNgan: 'Vừa tròn tình nghĩa gia đình, vừa tận dụng mạng lưới quan hệ sẵn có.',
         nhanDacBiet: 'Mạng lưới Tiểu tư sản',
+        khaiNiemKTCT: 'Phân bổ vốn nội bộ gia tộc',
         dieuKien: (state) => state.profile.xuatThan === 'tieu_tu_san',
         tacDong: {
           tienMatDelta: -20000000,
@@ -603,6 +642,7 @@ export const LIFE_SCENES: LifeScene[] = [
     tieuDe: 'Bước nhảy vọt vị thế',
     giaiDoanTuoi: [25, 29],
     trongSo: 11,
+    chuDeKTCT: 'Chương 3: Tích tụ, tập trung tư bản & Lao động khoa học chuyên sâu',
     dieuKien: (state) => ['tri_thuc_tinh_hoa', 'doanh_nhan_thanh_dat'].includes(state.profile.xuatThan),
     vanBan:
       'Ở ngưỡng cửa cuối tuổi đôi mươi, mạng lưới tinh hoa mở ra cho bạn cơ hội nhảy vọt bỏ xa số đông: hoặc dốc vốn lớn theo đuổi học vị tiến sĩ/dự án độc quyền đẳng cấp quốc tế, hoặc dùng đòn bẩy tài chính thâu tóm chuỗi kinh doanh quy mô lớn.',
@@ -613,6 +653,7 @@ export const LIFE_SCENES: LifeScene[] = [
           'Chi 80 triệu sang nước ngoài làm nghiên cứu sinh tiến sĩ, quyết tâm bước vào hàng ngũ chuyên gia đầu ngành.',
         moTaHauQuaNgan: 'Tốn kém tài chính và áp lực chất xám nghẹt thở, tạo bàn đạp cho học hàm cao nhất.',
         nhanDacBiet: 'Đặc quyền Trí thức',
+        khaiNiemKTCT: 'Tích lũy tư bản trí tuệ đỉnh cao',
         dieuKien: (state) => state.profile.xuatThan === 'tri_thuc_tinh_hoa',
         tacDong: {
           tienMatDelta: -80000000,
@@ -631,6 +672,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Vay tín chấp ngân hàng cộng 100 triệu vốn tự có thâu tóm hai chi nhánh phân phối độc quyền.',
         moTaHauQuaNgan: 'Quy mô mở rộng thần tốc, nhưng áp lực trả nợ lãi mẹ đẻ lãi con bắt đầu đè nặng.',
         nhanDacBiet: 'Đòn bẩy Tư bản (Rủi ro Cao)',
+        khaiNiemKTCT: 'Tập trung tư bản bằng đòn bẩy tín dụng',
         dieuKien: (state) => state.profile.xuatThan === 'doanh_nhan_thanh_dat',
         tacDong: {
           tienMatDelta: 40000000,
@@ -648,6 +690,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_elite_phat_trien_vung_chac',
         vanBan: 'Từ chối các canh bạc bốc đồng, giữ nhịp tăng trưởng thực chất và tích lũy uy tín chuyên môn.',
         moTaHauQuaNgan: 'Tốc độ tăng chậm hơn, đổi lại nền tảng vững như bàn thạch không sợ khủng hoảng.',
+        khaiNiemKTCT: 'Tích lũy tư bản thực tế an toàn',
         tacDong: {
           tienMatDelta: 15000000,
           sucKhoeDelta: 5,
@@ -666,6 +709,7 @@ export const LIFE_SCENES: LifeScene[] = [
     tieuDe: 'Hợp đồng lao động & An sinh',
     giaiDoanTuoi: [26, 30],
     trongSo: 7,
+    chuDeKTCT: 'Chương 2 & 3: Vai trò Nhà nước điều tiết phân phối & An sinh xã hội',
     vanBan:
       'Quy chế ký kết hợp đồng lao động và chế độ bảo hiểm xã hội (BHXH) được đặt lên bàn thương lượng. Quyết định giữa an sinh pháp lý dài hạn và lợi nhuận tiền mặt ngắn hạn phản ánh trực tiếp quan hệ sản xuất thực tế.',
     luaChon: [
@@ -673,6 +717,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_dong_bhxh_day_du',
         vanBan: 'Đồng ý trừ lương đóng BHXH để có lưới an sinh khi ốm đau, thai sản và về già.',
         moTaHauQuaNgan: 'Thu nhập hàng tháng ít đi một khoản, đổi lại sự an tâm pháp lý.',
+        khaiNiemKTCT: 'Lưới an sinh & Bảo hiểm sức lao động',
         dieuKien: (state) => state.profile.xuatThan !== 'doanh_nhan_thanh_dat',
         tacDong: {
           tienMatDelta: -3000000,
@@ -689,6 +734,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_lay_tien_mat_khong_bhxh',
         vanBan: 'Nhận toàn bộ tiền mặt, tự lo rủi ro vì tiền đang cần chi tiêu trước mắt.',
         moTaHauQuaNgan: 'Cầm tiền tươi tiêu dùng, phó mặc an sinh cho tương lai.',
+        khaiNiemKTCT: 'Thương lượng phi chính thức & Rủi ro trơ trọi',
         dieuKien: (state) => state.profile.xuatThan !== 'doanh_nhan_thanh_dat',
         tacDong: {
           tienMatDelta: 4000000,
@@ -706,6 +752,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Đàm phán đưa gói bảo hiểm sức khỏe quốc tế cao cấp vào hợp đồng lao động chuyên gia.',
         moTaHauQuaNgan: 'Lương thực nhận trừ một khoản, nhưng được bảo vệ toàn diện tại các bệnh viện hàng đầu.',
         nhanDacBiet: 'Đặc quyền Chuyên gia',
+        khaiNiemKTCT: 'Đãi ngộ chuyên gia chất lượng cao',
         dieuKien: (state) => state.profile.xuatThan === 'tri_thuc_tinh_hoa',
         tacDong: {
           tienMatDelta: -8000000,
@@ -725,6 +772,7 @@ export const LIFE_SCENES: LifeScene[] = [
         moTaHauQuaNgan:
           'Gia tăng chi phí vận hành doanh nghiệp, đổi lại sự gắn bó lâu dài và đạo đức kinh doanh chuẩn mực.',
         nhanDacBiet: 'Trách nhiệm Giới chủ',
+        khaiNiemKTCT: 'Trách nhiệm xã hội của nhà tư bản',
         dieuKien: (state) => state.profile.xuatThan === 'doanh_nhan_thanh_dat',
         tacDong: {
           tienMatDelta: -20000000,
@@ -744,6 +792,7 @@ export const LIFE_SCENES: LifeScene[] = [
           'Chỉ ký hợp đồng khoán ngoài thời vụ với phần lớn nhân công để cắt giảm chi phí bảo hiểm, gia tăng lợi nhuận.',
         moTaHauQuaNgan: 'Tiết kiệm được khoản chi phí lớn hàng tháng, nhưng người lao động phải tự đối mặt rủi ro.',
         nhanDacBiet: 'Tối ưu Hóa Tư bản',
+        khaiNiemKTCT: 'Cắt giảm chi phí khả biến (v)',
         dieuKien: (state) => state.profile.xuatThan === 'doanh_nhan_thanh_dat',
         tacDong: {
           tienMatDelta: 35000000,
@@ -769,6 +818,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [30, 36],
     trongSo: 9,
     dieuKien: (state) => !['tri_thuc_tinh_hoa', 'doanh_nhan_thanh_dat'].includes(state.profile.xuatThan),
+    chuDeKTCT: 'Chương 2 · Hai thuộc tính của hàng hóa & Khuyết tật KTTT',
     vanBan:
       'Bạn gom góp mở được một quầy bún nhỏ ở góc chợ. Đợt này giá thịt và xương hầm tăng phi mã. Một người bán hàng rong ghé qua mời bạn dùng bột cốt hầm công nghiệp cô đặc: chỉ cần nửa muỗng là nước lèo ngọt lịm thơm phức, chi phí rẻ chỉ bằng một phần tư so với hầm xương thật.',
     luaChon: [
@@ -776,6 +826,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_giu_nau_xuong_that',
         vanBan: 'Khăng khăng hầm xương tươi nguyên chất, chấp nhận lời ít và tăng giá bán thêm 3.000đ.',
         moTaHauQuaNgan: 'Lương tâm thanh thản, vài khách quen càu nhàu vì giá tăng.',
+        khaiNiemKTCT: 'Giá trị sử dụng thực & Đạo đức kinh doanh',
         tacDong: {
           tienMatDelta: -2000000,
           tinhThanDelta: 20,
@@ -791,6 +842,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_dung_bot_ngot_hoa_chat',
         vanBan: 'Dùng bột tạo ngọt công nghiệp để giữ giá bán rẻ cạnh tranh hút khách.',
         moTaHauQuaNgan: 'Lợi nhuận tăng vọt trong ngắn hạn, đêm về trong lòng thấp thỏm bất an.',
+        khaiNiemKTCT: 'Tối đa hóa giá trị cá biệt & Khuyết tật thị trường',
         tacDong: {
           tienMatDelta: 8000000,
           tinhThanDelta: -20,
@@ -810,6 +862,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [30, 36],
     trongSo: 10,
     dieuKien: (state) => state.profile.xuatThan === 'tri_thuc_tinh_hoa',
+    chuDeKTCT: 'Chương 2 & 3 · Lao động trí óc & Trách nhiệm xã hội',
     vanBan:
       'Một tập đoàn dược phẩm tư nhân đề xuất tài trợ 120 triệu đồng cho phòng lab của bạn, đổi lại bạn phải "điều chỉnh nhẹ" số liệu thử nghiệm lâm sàng theo hướng có lợi cho sản phẩm của họ trước khi công bố.',
     luaChon: [
@@ -819,6 +872,7 @@ export const LIFE_SCENES: LifeScene[] = [
           'Từ chối thẳng thừng tài trợ độc hại, giữ vững sự trung thực khoa học dẫu lab phải thắt lưng buộc bụng.',
         moTaHauQuaNgan: 'Bảo toàn danh dự và đạo đức trí thức, được giới chuyên môn kính trọng.',
         nhanDacBiet: 'Phẩm giá Trí thức',
+        khaiNiemKTCT: 'Liêm chính khoa học & Phẩm giá người lao động',
         tacDong: {
           tienMatDelta: -5000000,
           sucKhoeDelta: 0,
@@ -836,6 +890,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Thỏa hiệp làm đẹp số liệu nhận 120 triệu tài trợ để giải quyết bài toán kinh phí trước mắt.',
         moTaHauQuaNgan: 'Có nguồn tiền lớn duy trì nghiên cứu, nhưng tâm can luôn ám ảnh nỗi sợ bị phát giác.',
         nhanDacBiet: 'Thỏa hiệp Thực dụng',
+        khaiNiemKTCT: 'Thương mại hóa tri thức & Tha hóa lao động',
         tacDong: {
           tienMatDelta: 60000000,
           sucKhoeDelta: -5,
@@ -856,6 +911,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [30, 36],
     trongSo: 10,
     dieuKien: (state) => state.profile.xuatThan === 'doanh_nhan_thanh_dat',
+    chuDeKTCT: 'Chương 3 · Chi phí sản xuất tư bản chủ nghĩa & Tỷ suất lợi nhuận',
     vanBan:
       'Giá nguyên liệu đầu vào tăng đột biến 30%. Một nhà cung cấp trôi nổi chào bán lô phụ gia công nghiệp giá rẻ không nhãn mác, có thể giúp xưởng tiết kiệm ngay 80 triệu chi phí sản xuất mỗi quý.',
     luaChon: [
@@ -865,6 +921,7 @@ export const LIFE_SCENES: LifeScene[] = [
           'Kiên quyết dùng nguyên liệu chuẩn ISO, chấp nhận giảm tỷ suất lợi nhuận để bảo vệ sức khỏe người tiêu dùng.',
         moTaHauQuaNgan: 'Lợi nhuận ngắn hạn giảm sút nhưng thương hiệu doanh nghiệp đứng vững vàng.',
         nhanDacBiet: 'Kinh doanh Bền vững',
+        khaiNiemKTCT: 'Bảo toàn uy tín & Giá trị sử dụng xã hội',
         tacDong: {
           tienMatDelta: -15000000,
           sucKhoeDelta: 0,
@@ -882,6 +939,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Dùng nguyên liệu trôi nổi giá rẻ để tối đa hóa thặng dư và đè bẹp đối thủ cạnh tranh.',
         moTaHauQuaNgan: 'Thu về khoản lãi lớn tức thì, đặt cược danh tiếng doanh nghiệp vào vòng rủi ro pháp lý.',
         nhanDacBiet: 'Tối ưu Thặng dư',
+        khaiNiemKTCT: 'Cắt giảm tư bản bất biến (c) bất chấp đạo đức',
         tacDong: {
           tienMatDelta: 80000000,
           sucKhoeDelta: -5,
@@ -902,6 +960,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [34, 40],
     trongSo: 8,
     dieuKien: (state) => !['tri_thuc_tinh_hoa', 'doanh_nhan_thanh_dat'].includes(state.profile.xuatThan),
+    chuDeKTCT: 'Chương 3 · Tích lũy tư bản & Chi phí tái sản xuất sức lao động',
     vanBan:
       'Sau gần mười năm cày cuốc, bạn có một khoản tích cóp trong tài khoản. Mẹ ở quê nhắn mái ngói gian nhà bếp đã dột nát sau mùa mưa bão, cần sửa gấp. Đúng lúc đó, một cơ hội mở rộng làm ăn kinh doanh triển vọng xuất hiện.',
     luaChon: [
@@ -909,6 +968,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_ve_sua_nha_cho_me',
         vanBan: 'Rút 30 triệu gửi về quê lợp lại mái nhà kiên cố và đưa mẹ đi khám tổng quát.',
         moTaHauQuaNgan: 'Ngôi nhà quê khô ráo, lòng nhẹ nhõm vì tròn đạo hiếu.',
+        khaiNiemKTCT: 'Tái tạo tư liệu sinh hoạt gia đình',
         tacDong: {
           tienMatDelta: -30000000,
           sucKhoeDelta: 0,
@@ -925,6 +985,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_hun_von_kinh_doanh',
         vanBan: 'Dồn vốn đầu tư mở rộng sinh lời, hẹn mẹ sẽ sửa nhà vào năm sau khi có lời.',
         moTaHauQuaNgan: 'Đặt cược vào cơ hội sinh lời, mang nỗi nợ nần tinh thần với gia đình.',
+        khaiNiemKTCT: 'Chuyển hóa thu nhập thành tư bản tích lũy',
         tacDong: {
           tienMatDelta: -40000000,
           sucKhoeDelta: -5,
@@ -943,6 +1004,7 @@ export const LIFE_SCENES: LifeScene[] = [
           'Gửi 20 triệu sửa nhà cho mẹ, 20 triệu còn lại cùng người trong họ mở điểm thu gom nông sản sạch tại quê.',
         moTaHauQuaNgan: 'Tròn đạo hiếu và mở ra lối thoát kinh tế bền vững cho gia đình ở quê.',
         nhanDacBiet: 'Gắn kết Quê hương',
+        khaiNiemKTCT: 'Kinh tế hợp tác & Liên kết nông hộ',
         dieuKien: (state) => state.profile.xuatThan === 'nong_thon_ngheo',
         tacDong: {
           tienMatDelta: -40000000,
@@ -964,6 +1026,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [36, 42],
     trongSo: 7,
     dieuKien: (state) => !['tri_thuc_tinh_hoa', 'doanh_nhan_thanh_dat'].includes(state.profile.xuatThan),
+    chuDeKTCT: 'Chương 2 · Ngoại ứng tiêu cực & Khuyết tật thị trường',
     vanBan:
       'Xưởng làm mộc nhỏ của bạn thuê trong con ngõ đông đúc phát sinh nhiều bụi cưa và mùi sơn PU nồng nặc. Bác tổ trưởng dân phố và gia đình hàng xóm có con nhỏ sang nhắc nhở tế nhị. Lắp đặt hệ thống lọc bụi hút khí đạt chuẩn tốn khoảng 14 triệu đồng – số tiền bằng hai tháng lãi của xưởng.',
     luaChon: [
@@ -971,6 +1034,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_lap_he_thong_loc_bui',
         vanBan: 'Đi vay thêm tiền lắp đặt buồng sơn và quạt hút bụi lọc mùi triệt để.',
         moTaHauQuaNgan: 'Tốn kém tài chính, đổi lại xóm giềng hòa nhã, xưởng hoạt động êm ấm.',
+        khaiNiemKTCT: 'Nội hóa chi phí môi trường & Trách nhiệm cộng đồng',
         tacDong: {
           tienMatDelta: -14000000,
           sucKhoeDelta: 10,
@@ -987,6 +1051,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_che_bat_phun_dem',
         vanBan: 'Chỉ che bạt sơ sài và dời việc phun sơn sang lúc nửa đêm để né tránh phàn nàn.',
         moTaHauQuaNgan: 'Tiết kiệm được tiền, nhưng trong xóm bắt đầu nhìn nhau bằng ánh mắt cay nghiệt.',
+        khaiNiemKTCT: 'Đẩy ngoại ứng tiêu cực cho xã hội gánh chịu',
         tacDong: {
           tienMatDelta: -500000,
           sucKhoeDelta: -10,
@@ -1007,6 +1072,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [36, 42],
     trongSo: 11,
     dieuKien: (state) => state.profile.xuatThan === 'doanh_nhan_thanh_dat',
+    chuDeKTCT: 'Chương 3 · Tích tụ, tập trung tư bản & Khủng hoảng tín dụng',
     vanBan:
       'Cơn sốt đất công nghiệp bùng nổ. Một dự án thâu tóm khu xưởng mới trị giá 800 triệu được ngân hàng đề xuất tài trợ đòn bẩy gấp 4 lần vốn tự có. Nếu thành công chốt hợp đồng lớn, bạn sẽ bứt phá thành đại gia vùng; nhưng nếu thanh khoản thị trường đóng băng hoặc đối tác quỵt nợ, bạn sẽ mất trắng cơ nghiệp gia tộc và đối diện án phạt pháp lý nặng nề.',
     luaChon: [
@@ -1015,6 +1081,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Tất tay thế chấp toàn bộ tài sản vay 600 triệu thâu tóm khu xưởng, chấp nhận canh bạc sinh tử.',
         moTaHauQuaNgan: 'Càng trèo cao ngã càng đau: mở ra lợi nhuận khủng nhưng đặt cả gia tộc lên miệng hố vỡ nợ.',
         nhanDacBiet: 'Canh bạc Sinh tử (Càng cao ngã càng đau)',
+        khaiNiemKTCT: 'Đòn bẩy tư bản giả & Càng cao ngã càng đau',
         tacDong: {
           tienMatDelta: 120000000,
           sucKhoeDelta: -20,
@@ -1032,6 +1099,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Từ chối đòn bẩy mạo hiểm, chỉ mở rộng từng bước bằng nguồn tiền thặng dư tự có.',
         moTaHauQuaNgan: 'Bỏ lỡ cơ hội bứt phá thần tốc, giữ vững nền móng gia tộc an toàn tuyệt đối qua mọi cơn bão.',
         nhanDacBiet: 'Bảo toàn Cơ nghiệp',
+        khaiNiemKTCT: 'Tích lũy tư bản hữu cơ từ thặng dư thực tế',
         tacDong: {
           tienMatDelta: 20000000,
           sucKhoeDelta: 10,
@@ -1052,6 +1120,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [36, 42],
     trongSo: 11,
     dieuKien: (state) => state.profile.xuatThan === 'tri_thuc_tinh_hoa',
+    chuDeKTCT: 'Chương 2 · Khuyết tật thị trường & Trục lợi nhóm lợi ích',
     vanBan:
       'Bạn được bổ nhiệm vào hội đồng thẩm định dự án công nghệ quốc gia quy mô hàng chục tỷ. Một doanh nghiệp sân sau đề xuất "lại quả" 200 triệu tiền mặt để bạn ký duyệt thông qua hồ sơ thử nghiệm còn nhiều lỗ hổng nguy hiểm. Ở đỉnh cao danh vọng, một chữ ký có thể mang lại gia tài đồ sộ, nhưng nếu bị phanh phui, danh dự cả đời, học hàm và tự do sẽ tan thành mây khói.',
     luaChon: [
@@ -1060,6 +1129,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Ký duyệt hồ sơ sân sau nhận 200 triệu hoa hồng, bước chân vào liên minh quyền lực ngầm.',
         moTaHauQuaNgan: 'Tiền bạc kếch xù, nhưng bước lên sợi dây thép gai có thể sụp đổ bất cứ lúc nào khi bị thanh tra.',
         nhanDacBiet: 'Liên minh Quyền lực (Càng cao ngã càng đau)',
+        khaiNiemKTCT: 'Chủ nghĩa tư bản thân hữu & Trục lợi chính sách',
         tacDong: {
           tienMatDelta: 200000000,
           sucKhoeDelta: -15,
@@ -1077,6 +1147,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Lập biên bản từ chối nghiệm thu công trình sai phạm, công khai bảo vệ tính trung thực của nền khoa học.',
         moTaHauQuaNgan: 'Bị nhóm lợi ích đe dọa và gây áp lực chức vụ, đổi lại khí tiết ngút ngàn của bậc trí giả chân chính.',
         nhanDacBiet: 'Khí tiết Trí thức',
+        khaiNiemKTCT: 'Độc lập phản biện & Bảo vệ chân lý khoa học',
         tacDong: {
           tienMatDelta: -10000000,
           sucKhoeDelta: -5,
@@ -1101,6 +1172,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [43, 49],
     trongSo: 10,
     dieuKien: (state) => !['tri_thuc_tinh_hoa', 'doanh_nhan_thanh_dat'].includes(state.profile.xuatThan),
+    chuDeKTCT: 'Chương 3 · Giới hạn sinh học & Sự hao mòn thể lực sức lao động',
     vanBan:
       'Sau hơn hai mươi năm bươn chải lao động nặng, lưng bạn đau buốt không cúi xuống được. Bác sĩ bệnh viện quận chẩn đoán thoát vị đĩa đệm chèn ép dây thần kinh, yêu cầu nghỉ ngơi vật lý trị liệu ít nhất hai tháng và tránh mang vác nặng, nếu không có nguy cơ teo cơ chân.',
     luaChon: [
@@ -1108,6 +1180,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_nghi_dieu_tri_benh',
         vanBan: 'Tuân thủ lời bác sĩ, tạm dừng nhận việc nặng để tập trung phục hồi cột sống.',
         moTaHauQuaNgan: 'Thu nhập gián đoạn, phải tiêu vào tiền tiết kiệm nhưng cứu được đôi chân.',
+        khaiNiemKTCT: 'Phục hồi giá trị sử dụng của sức lao động',
         tacDong: {
           tienMatDelta: -8000000,
           sucKhoeDelta: 20,
@@ -1124,6 +1197,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_uong_giam_dau_lam_tiep',
         vanBan: 'Mua thuốc giảm đau liều mạnh uống cầm cự để tiếp tục đi làm kiếm cơm.',
         moTaHauQuaNgan: 'Kiếm được tiền sinh hoạt hàng ngày, nhưng cơn đau ngầm phá hủy khớp xương.',
+        khaiNiemKTCT: 'Tự bóc lột sức lao động quá giới hạn sinh học',
         tacDong: {
           tienMatDelta: 10000000,
           sucKhoeDelta: -30,
@@ -1144,6 +1218,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [43, 49],
     trongSo: 11,
     dieuKien: (state) => ['tri_thuc_tinh_hoa', 'doanh_nhan_thanh_dat'].includes(state.profile.xuatThan),
+    chuDeKTCT: 'Chương 3 · Hao mòn tâm thần kinh trong điều hành tư bản',
     vanBan:
       'Sau nhiều năm căng mình trong những cuộc họp HĐQT cân não và áp lực dư luận khốc liệt, bạn gục ngã vì cơn thiếu máu cơ tim cấp. Bác sĩ cảnh báo nếu tiếp tục ôm đồm quyền lực và làm việc với cường độ này, nguy cơ đột quỵ tử vong hoặc liệt nửa người trong vòng 1-2 năm tới là rất cao.',
     luaChon: [
@@ -1152,6 +1227,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Chuyển giao quyền điều hành trực tiếp cho cấp phó, chi 80 triệu sang khu nghỉ dưỡng trị liệu thân tâm.',
         moTaHauQuaNgan: 'Rút lui khỏi tuyến đầu quyền lực, nhưng giữ lại được mạng sống và sự thanh thản.',
         nhanDacBiet: 'Buông bỏ Quyền lực',
+        khaiNiemKTCT: 'Bảo tồn sinh mệnh & Giảm cường độ quản trị',
         tacDong: {
           tienMatDelta: -80000000,
           sucKhoeDelta: 35,
@@ -1169,6 +1245,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Uống thuốc an thần và trợ tim liều cao, kiên quyết bám trụ chiếc ghế quyền lực không chịu nhường ngôi.',
         moTaHauQuaNgan: 'Nắm chặt quyền uy và dòng tiền thặng dư, nhưng thân xác như ngọn nến cháy kiệt hai đầu.',
         nhanDacBiet: 'Bám giữ Ngai vàng (Cực kỳ Hao mòn)',
+        khaiNiemKTCT: 'Vắt kiệt sinh lực vì dòng chảy thặng dư',
         tacDong: {
           tienMatDelta: 60000000,
           sucKhoeDelta: -45,
@@ -1189,6 +1266,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [47, 54],
     trongSo: 15,
     dieuKien: (state) => Boolean(state.flags['nhung_cham_hoc_thuat'] || state.flags['don_bay_khong_lo']),
+    chuDeKTCT: 'Chương 2 & 3 · Sự sụp đổ của tư bản giả & Khủng hoảng thanh khoản',
     vanBan:
       'Quy luật nhân quả của thương trường và học thuật ập đến: cơ quan chức năng công bố thanh tra toàn diện về sai phạm đề tài / vỡ nợ đứt gãy thanh khoản đòn bẩy. Ở vị trí càng cao ngất ngưởng, cú ngã của bạn trước công chúng và truyền thông càng trở nên chấn động và nhục nhã.',
     luaChon: [
@@ -1197,6 +1275,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Bán tháo toàn bộ bất động sản nộp 250 triệu khắc phục hậu quả, từ chức mọi chức vị để tránh vòng lao lý.',
         moTaHauQuaNgan: 'Càng trèo cao ngã càng đau: mất sạch tiền tài và danh tiếng cả đời, nhưng còn lại tự do.',
         nhanDacBiet: 'Cú ngã Thế kỷ (Trả giá Đắt)',
+        khaiNiemKTCT: 'Quy luật giá trị thanh trừng & Hoàn lương',
         tacDong: {
           tienMatDelta: -250000000,
           sucKhoeDelta: -20,
@@ -1214,6 +1293,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Thuê đội ngũ luật sư tìm kẽ hở pháp lý và đổ trách nhiệm cho cấp dưới để giữ lại tài sản.',
         moTaHauQuaNgan: 'Càng vùng vẫy càng chìm sâu vào khủng hoảng pháp lý, nhân phẩm và uy tín hoàn toàn sụp đổ.',
         nhanDacBiet: 'Thân bại Danh liệt',
+        khaiNiemKTCT: 'Tha hóa đạo đức trước nguy cơ phá sản',
         tacDong: {
           tienMatDelta: -80000000,
           sucKhoeDelta: -30,
@@ -1234,6 +1314,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [46, 52],
     trongSo: 8,
     dieuKien: (state) => !['tri_thuc_tinh_hoa', 'doanh_nhan_thanh_dat'].includes(state.profile.xuatThan),
+    chuDeKTCT: 'Chương 3 · Cấu tạo hữu cơ tư bản c/v & Đội quân thất nghiệp dự bị',
     vanBan:
       'Nơi bạn làm việc tái cơ cấu để ứng dụng máy móc tự động hóa. Quản lý thông báo các nhân sự trên 45 tuổi có hai lựa chọn: nhận một khoản hỗ trợ thôi việc bằng 3 tháng lương (khoảng 22 triệu) rồi tự tìm sinh kế mới, hoặc chuyển sang làm nhân viên tạp vụ vệ sinh với mức lương chỉ bằng một nửa.',
     luaChon: [
@@ -1241,6 +1322,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_nhan_tien_ve_mo_xe_ban',
         vanBan: 'Nhận 22 triệu bồi thường thôi việc, mua xe đẩy bán bánh mì nước giải khát tự chủ.',
         moTaHauQuaNgan: 'Chấp nhận bấp bênh thương trường tự do ở tuổi xế chiều.',
+        khaiNiemKTCT: 'Chuyển sang khu vực kinh tế cá thể tự do',
         tacDong: {
           tienMatDelta: 18000000,
           sucKhoeDelta: -5,
@@ -1257,6 +1339,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_chap_nhan_lam_ve_sinh',
         vanBan: 'Chấp nhận làm tạp vụ vệ sinh lương thấp để giữ lấy nguồn thu ổn định có bảo hiểm.',
         moTaHauQuaNgan: 'Gác lại tự ái cá nhân, đổi lấy sự yên ổn cơm áo qua ngày.',
+        khaiNiemKTCT: 'Bán sức lao động giản đơn tìm kiếm an sinh',
         tacDong: {
           tienMatDelta: 12000000,
           sucKhoeDelta: -10,
@@ -1277,6 +1360,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [46, 52],
     trongSo: 10,
     dieuKien: (state) => ['tri_thuc_tinh_hoa', 'doanh_nhan_thanh_dat'].includes(state.profile.xuatThan),
+    chuDeKTCT: 'Chương 2 & 3 · Tư bản tài chính & Chuyển giao tri thức',
     vanBan:
       'Bước sang tuổi ngũ tuần, vị thế của bạn trong ngành đã vững chắc. Một tổ chức lớn mời bạn vào hội đồng cố vấn chiến lược với mức thù lao 120 triệu nhưng đòi hỏi bảo chứng uy tín cho các quyết định mở rộng gây tranh cãi. Trong khi đó, bạn có cơ hội lui về viết sách chuyên khảo hoặc chuyển giao quyền điều hành cho thế hệ kế cận.',
     luaChon: [
@@ -1285,6 +1369,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Nhận ghế cố vấn chiến lược, tận dụng triệt để sức ảnh hưởng và mạng lưới quan hệ đỉnh cao.',
         moTaHauQuaNgan: 'Thu nhập thù lao rất lớn, chấp nhận áp lực dư luận và trách nhiệm pháp lý.',
         nhanDacBiet: 'Quyền lực & Uy tín',
+        khaiNiemKTCT: 'Tư bản hóa uy tín và quan hệ xã hội',
         tacDong: {
           tienMatDelta: 120000000,
           sucKhoeDelta: -10,
@@ -1302,6 +1387,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Lui về hậu trường viết sách nghiên cứu, đào tạo thế hệ trẻ và chuyển giao dần quyền điều hành.',
         moTaHauQuaNgan: 'Giữ trọn thanh danh trong sạch và tinh thần an lạc, mở đường cho thế hệ sau.',
         nhanDacBiet: 'Chuyển giao Di sản',
+        khaiNiemKTCT: 'Đầu tư đào tạo thế hệ kế cận & Di sản tri thức',
         tacDong: {
           tienMatDelta: -15000000,
           sucKhoeDelta: 15,
@@ -1322,6 +1408,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [50, 56],
     trongSo: 7,
     dieuKien: (state) => !['tri_thuc_tinh_hoa', 'doanh_nhan_thanh_dat'].includes(state.profile.xuatThan),
+    chuDeKTCT: 'Chương 3 · Tái sản xuất sức lao động thế hệ sau',
     vanBan:
       'Con bạn tốt nghiệp đại học, ấp ủ ước mơ cùng bạn bè mở một công ty dịch vụ công nghệ nhỏ, tha thiết xin bố mẹ hỗ trợ 50 triệu đồng để đặt cọc văn phòng và mua máy tính. Số tiền này là toàn bộ khoản tích lũy bạn để dành dưỡng già phòng lúc bệnh tật.',
     luaChon: [
@@ -1329,6 +1416,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_dua_tien_cho_con',
         vanBan: 'Rút trọn sổ tiết kiệm trao cho con, tin tưởng chấp cánh cho ước mơ của thế hệ sau.',
         moTaHauQuaNgan: 'Ví tiền về con số không, nhưng nhìn thấy ánh mắt bừng sáng của con trẻ.',
+        khaiNiemKTCT: 'Chuyển dịch tích lũy nuôi dưỡng sức lao động mới',
         tacDong: {
           tienMatDelta: -50000000,
           sucKhoeDelta: 0,
@@ -1345,6 +1433,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_giu_lai_duong_gia',
         vanBan: 'Từ chối dứt khoát, khuyên con tự đi làm thuê tích lũy kinh nghiệm và tự vay vốn.',
         moTaHauQuaNgan: 'Bảo vệ được khoản tiền sinh tồn tuổi già, mối quan hệ gia đình có vết gợn.',
+        khaiNiemKTCT: 'Bảo vệ quỹ tư liệu sinh hoạt tuổi già',
         tacDong: {
           tienMatDelta: 0,
           sucKhoeDelta: 0,
@@ -1362,6 +1451,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Bàn giao một phần mặt bằng buôn bán và hỗ trợ 40 triệu vốn kinh doanh cho con.',
         moTaHauQuaNgan: 'Gia đình cùng chung tay phát triển sinh kế buôn bán của thế hệ mới.',
         nhanDacBiet: 'Hỗ trợ Mặt bằng',
+        khaiNiemKTCT: 'Kế thừa tư liệu sản xuất gia đình',
         dieuKien: (state) => state.profile.xuatThan === 'tieu_tu_san',
         tacDong: {
           tienMatDelta: -40000000,
@@ -1383,6 +1473,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [50, 56],
     trongSo: 9,
     dieuKien: (state) => ['tri_thuc_tinh_hoa', 'doanh_nhan_thanh_dat'].includes(state.profile.xuatThan),
+    chuDeKTCT: 'Chương 3 · Tích tụ tư bản liên thế hệ & Đầu tư chiều sâu',
     vanBan:
       'Con bạn vừa nhận thư mời làm tiến sĩ / khởi nghiệp công nghệ tài chính tại nước ngoài, cần khoản đầu tư mạo hiểm ban đầu 200 triệu đồng để nắm quyền chi phối cổ phần sáng lập hoặc tự lập phòng nghiên cứu độc lập.',
     luaChon: [
@@ -1391,6 +1482,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Rót ngay 200 triệu vốn hạt giống và dùng toàn bộ mạng lưới quan hệ mở đường cho con chiếm ưu thế tuyệt đối.',
         moTaHauQuaNgan: 'Tái sản xuất vị thế tầng lớp trên liên thế hệ, nhưng áp lực thành công đè nặng lên cả hai thế hệ.',
         nhanDacBiet: 'Kế thừa Tư bản & Vị thế',
+        khaiNiemKTCT: 'Truyền thừa tư bản và đặc quyền giai cấp',
         tacDong: {
           tienMatDelta: -200000000,
           sucKhoeDelta: 0,
@@ -1408,6 +1500,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Chỉ cấp 30 triệu vé máy bay sinh hoạt phí, bắt buộc con tự gọi vốn mạo hiểm hoặc săn học bổng bằng thực lực.',
         moTaHauQuaNgan: 'Giữ nguyên khối tài sản tích lũy và rèn luyện bản lĩnh độc lập cho thế hệ kế cận.',
         nhanDacBiet: 'Rèn giũa Độc lập',
+        khaiNiemKTCT: 'Thử thách quy luật cạnh tranh thị trường',
         tacDong: {
           tienMatDelta: -30000000,
           sucKhoeDelta: 5,
@@ -1432,6 +1525,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [57, 63],
     trongSo: 9,
     dieuKien: (state) => !['tri_thuc_tinh_hoa', 'doanh_nhan_thanh_dat'].includes(state.profile.xuatThan),
+    chuDeKTCT: 'Chương 3 · Giá trị thặng dư & Sự bấp bênh khi hết tuổi lao động',
     vanBan:
       'Đã gần sáu mươi, các khớp gối đau nhức mỗi khi trở trời. Tòa nhà chung cư gần nhà tuyển bảo vệ trông xe ban đêm, trả 5 triệu mỗi tháng. Con cái bảo bạn nên ở nhà trông cháu đỡ đần việc nhà và nghỉ ngơi, nhưng trong túi bạn không có đồng nào dằn túi khiến bạn cảm thấy lệ thuộc.',
     luaChon: [
@@ -1439,6 +1533,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_di_lam_bao_ve_dem',
         vanBan: 'Nhận ca trực bảo vệ đêm để có tiền tiêu riêng không phải ngửa tay xin con cháu.',
         moTaHauQuaNgan: 'Có đồng ra đồng vào tự chủ, nhưng giấc ngủ chập chờn bào mòn tuổi thọ.',
+        khaiNiemKTCT: 'Bán sức lao động tuổi xế chiều vì thiếu an sinh',
         tacDong: {
           tienMatDelta: 15000000,
           sucKhoeDelta: -20,
@@ -1455,6 +1550,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_o_nha_vui_con_chau',
         vanBan: 'Chấp nhận buông tay công việc mưu sinh, ở nhà nấu cơm và đón cháu đi học.',
         moTaHauQuaNgan: 'Cuộc sống đạm bạc, đổi lại những tiếng cười trẻ thơ rộn ràng góc sân.',
+        khaiNiemKTCT: 'Tái tạo đời sống tinh thần gia đình tự nhiên',
         tacDong: {
           tienMatDelta: -3000000,
           sucKhoeDelta: 10,
@@ -1475,6 +1571,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [57, 63],
     trongSo: 10,
     dieuKien: (state) => ['tri_thuc_tinh_hoa', 'doanh_nhan_thanh_dat'].includes(state.profile.xuatThan),
+    chuDeKTCT: 'Chương 2 · Phân phối lại thu nhập & Trách nhiệm xã hội',
     vanBan:
       'Bước sang tuổi sáu mươi, bạn nắm giữ khối tài sản và uy tín xã hội đáng nể. Một quỹ học bổng khoa học và bảo trợ khởi nghiệp ngỏ ý mời bạn đóng góp 200 triệu làm chủ tịch danh dự. Cùng lúc, bạn có phương án thoái vốn mua biệt thự nhà vườn ven đô để an dưỡng tuyệt đối xa rời thị phi.',
     luaChon: [
@@ -1483,6 +1580,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Trích 200 triệu lập quỹ học bổng và bảo trợ khoa học, để lại di sản xã hội phụng sự cộng đồng.',
         moTaHauQuaNgan: 'Hy sinh một phần của cải cá nhân, tên tuổi được ghi danh vào bảng vàng cống hiến.',
         nhanDacBiet: 'Phụng sự Xã hội',
+        khaiNiemKTCT: 'Phụng sự phát triển nguồn nhân lực xã hội',
         tacDong: {
           tienMatDelta: -200000000,
           sucKhoeDelta: 5,
@@ -1500,6 +1598,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Thoái vốn đầu tư khu biệt thự sinh thái an dưỡng, tận hưởng thành quả lao động đỉnh cao của bản thân.',
         moTaHauQuaNgan: 'Sức khỏe và tinh thần được chăm sóc thượng lưu, khép lại mọi vướng bận danh vọng.',
         nhanDacBiet: 'An hưởng Đẳng cấp',
+        khaiNiemKTCT: 'Tiêu dùng cá nhân từ thặng dư tích lũy',
         tacDong: {
           tienMatDelta: 150000000,
           sucKhoeDelta: 25,
@@ -1520,6 +1619,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [62, 68],
     trongSo: 10,
     dieuKien: (state) => !['tri_thuc_tinh_hoa', 'doanh_nhan_thanh_dat'].includes(state.profile.xuatThan),
+    chuDeKTCT: 'Chương 2 · Lưới an sinh xã hội & Rủi ro khi thiếu bảo hiểm',
     vanBan:
       'Một cơn đột quỵ nhẹ khiến bạn phải vào viện cấp cứu. Bác sĩ đề xuất phác đồ điều trị can thiệp chuyên sâu tốn gần 70 triệu đồng ngoài danh mục BHYT chi trả. Số tiền này quá lớn so với hoàn cảnh gia đình hiện tại, có thể khiến con bạn phải đi vay mượn khắp nơi.',
     luaChon: [
@@ -1527,6 +1627,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_chua_tri_het_minh',
         vanBan: 'Đồng ý để gia đình vay mượn chạy chữa tối đa để tiếp tục sống bên người thân.',
         moTaHauQuaNgan: 'Cứu được mạng sống, để lại gánh nặng nợ nần cho đời sau.',
+        khaiNiemKTCT: 'Khủng hoảng tài chính y tế gia đình',
         tacDong: {
           tienMatDelta: -70000000,
           sucKhoeDelta: 15,
@@ -1543,6 +1644,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_xin_ve_uong_thuoc_nam',
         vanBan: 'Xin bác sĩ cho xuất viện dùng thuốc bảo hiểm và thảo dược, không muốn làm khổ con cháu.',
         moTaHauQuaNgan: 'Giữ trọn vẹn gia sản cho con, chấp nhận số phận một cách bình thản.',
+        khaiNiemKTCT: 'Chấp nhận giới hạn sinh học bảo toàn của cải con cháu',
         tacDong: {
           tienMatDelta: -5000000,
           sucKhoeDelta: -35,
@@ -1563,6 +1665,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [62, 68],
     trongSo: 10,
     dieuKien: (state) => ['tri_thuc_tinh_hoa', 'doanh_nhan_thanh_dat'].includes(state.profile.xuatThan),
+    chuDeKTCT: 'Chương 3 · Phân chia quyền sở hữu tư bản & Mâu thuẫn quyền lợi',
     vanBan:
       'Cơn bạo bệnh tuổi già đưa bạn vào phòng chăm sóc đặc biệt tại bệnh viện quốc tế hàng đầu. Trong lúc sức khỏe suy yếu, các con và những người đồng sáng lập bắt đầu ngấm ngầm chia phe, gây sức ép đòi bạn ký phân chia cổ phần tập đoàn và quyền sở hữu các bằng sáng chế/bất động sản.',
     luaChon: [
@@ -1571,6 +1674,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Mời công chứng viên lập di chúc minh bạch: chia đều tài sản cho các con và dành 30% cho quỹ xã hội.',
         moTaHauQuaNgan: 'Bảo toàn đạo đức gia đình và ngăn chặn cảnh nồi da xáo thịt vì lòng tham của cải.',
         nhanDacBiet: 'Di chúc Công minh',
+        khaiNiemKTCT: 'Hài hòa lợi ích gia tộc và xã hội',
         tacDong: {
           tienMatDelta: -50000000,
           sucKhoeDelta: 10,
@@ -1588,6 +1692,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Chỉ định người con mưu lược và tàn nhẫn nhất thâu tóm toàn quyền điều hành để giữ vững đế chế.',
         moTaHauQuaNgan: 'Đế chế tư bản được bảo tồn nguyên vẹn nhưng mối dây huyết thống vĩnh viễn rạn nứt.',
         nhanDacBiet: 'Quy luật Sinh tồn Tư bản',
+        khaiNiemKTCT: 'Tập trung tư bản cho kẻ mạnh nhất',
         tacDong: {
           tienMatDelta: 100000000,
           sucKhoeDelta: -10,
@@ -1608,6 +1713,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [25, 31],
     trongSo: 14,
     dieuKien: (state) => state.flags['xe_sap_hong'] === true,
+    chuDeKTCT: 'Chương 3 · Hao mòn tư liệu lao động & Nguy cơ gián đoạn sức lao động',
     vanBan:
       'Trời đổ mưa rào tầm tã giờ tan tầm. Chiếc xe máy bạn từng tiếc tiền không thay bộ thắng nay bỗng trượt dài trên mặt đường trơn khi tránh một chiếc xe tải quay đầu. Bạn ngã nhào xuống lề đường, chân trái sưng tấy, chiếc xe cong vành bánh trước.',
     luaChon: [
@@ -1615,6 +1721,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_vao_vien_chup_chieu',
         vanBan: 'Bắt taxi vào thẳng bệnh viện chụp chiếu và sửa lại toàn bộ xe đàng hoàng.',
         moTaHauQuaNgan: 'Tốn một khoản tiền lớn, nhưng kịp thời giữ đôi chân lành lặn.',
+        khaiNiemKTCT: 'Chi phí sửa chữa hao mòn và phục hồi sức khỏe',
         tacDong: {
           tienMatDelta: -6500000,
           sucKhoeDelta: -10,
@@ -1629,6 +1736,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_tu_bo_thuoc_la',
         vanBan: 'Ra tiệm thuốc mua vài viên giảm đau, tự bó chân bằng dầu nóng rồi nắn lại vành xe đi tiếp.',
         moTaHauQuaNgan: 'Giữ lại được tiền mặt, nhưng khớp chân trở thành bệnh mãn tính mỗi khi trái gió.',
+        khaiNiemKTCT: 'Tiết kiệm sai lầm làm suy giảm sức lao động dài hạn',
         tacDong: {
           tienMatDelta: -1200000,
           sucKhoeDelta: -25,
@@ -1647,6 +1755,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [24, 32],
     trongSo: 14,
     dieuKien: (state) => state.flags['vay_app_tieu_dung'] === true,
+    chuDeKTCT: 'Chương 2 · Chức năng phương tiện thanh toán & Bẫy tín dụng đen',
     vanBan:
       'Khoản trả góp chiếc điện thoại năm nào cộng dồn lãi phạt vì vài lần đóng trễ đã phình to gấp đôi số tiền gốc. Nhân viên thu hồi nợ gọi điện liên tục cho người thân và đồng nghiệp của bạn để gây sức ép đòi thanh toán dứt điểm ngay trong tuần.',
     luaChon: [
@@ -1654,6 +1763,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_vay_nguoi_quen_tat_toan',
         vanBan: 'Ngậm ngùi vay mượn họ hàng và bán bớt đồ đạc để trả đứt khoản nợ độc hại này.',
         moTaHauQuaNgan: 'Mất tiền mặt và ngại ngùng với người thân, nhưng cắt được vòng xoáy lãi mẹ đẻ lãi con.',
+        khaiNiemKTCT: 'Cắt đứt chuỗi thanh khoản độc hại',
         tacDong: {
           tienMatDelta: -14000000,
           tinhThanDelta: 10,
@@ -1668,6 +1778,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_dao_no_app_khac',
         vanBan: 'Tải thêm một ứng dụng vay nóng khác để lấy tiền lấp vào khoản nợ hiện tại.',
         moTaHauQuaNgan: 'Hoãn được cơn bão hôm nay, đẩy bản thân lún sâu hơn vào đầm lầy nợ nần.',
+        khaiNiemKTCT: 'Vòng xoáy khủng hoảng nợ tín dụng',
         tacDong: {
           tienMatDelta: -4000000,
           sucKhoeDelta: -10,
@@ -1687,6 +1798,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [30, 38],
     trongSo: 13,
     dieuKien: (state) => state.flags['hi_sinh_cho_em'] === true,
+    chuDeKTCT: 'Chương 3 · Tái sản xuất xã hội & Tương trợ gia đình',
     vanBan:
       'Cô em gái mà bạn từng nhường toàn bộ tiền tiết kiệm cho đi học năm nào nay đã ra trường, có công việc kế toán ổn định tại thành phố. Cuối tuần, em ghé thăm phòng trọ mang theo chiếc phong bì 15 triệu đồng và bảo muốn phụ bạn trang trải một phần gánh nặng cuộc sống.',
     luaChon: [
@@ -1694,6 +1806,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_nhan_tinh_cam_cua_em',
         vanBan: 'Cảm động nhận tấm lòng của em để trang trải nợ nần và tu sửa lại chỗ ở.',
         moTaHauQuaNgan: 'Gánh nặng kinh tế vơi bớt, tình cảm anh em ruột thịt càng thêm gắn bó.',
+        khaiNiemKTCT: 'Hoàn vốn đầu tư tình nghĩa liên thế hệ',
         tacDong: {
           tienMatDelta: 15000000,
           tinhThanDelta: 25,
@@ -1707,6 +1820,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_tu_choi_khen_em_giu_lay',
         vanBan: 'Xua tay từ chối, dặn em giữ lấy làm vốn lập gia đình riêng của mình.',
         moTaHauQuaNgan: 'Giữ trọn nét tự trọng của người anh/chị cả, dù ví tiền vẫn eo hẹp.',
+        khaiNiemKTCT: 'Tích lũy tư liệu sinh hoạt cho người thân',
         tacDong: {
           tienMatDelta: 0,
           tinhThanDelta: 15,
@@ -1725,6 +1839,7 @@ export const LIFE_SCENES: LifeScene[] = [
     giaiDoanTuoi: [35, 44],
     trongSo: 14,
     dieuKien: (state) => state.flags['buon_gian_ban_lan'] === true,
+    chuDeKTCT: 'Chương 2 · Vai trò quản lý của Nhà nước & Xử lý khuyết tật KTTT',
     vanBan:
       'Một thực khách sau khi ăn sáng tại quán bạn bị ngộ độc phải nhập viện. Đoàn kiểm tra vệ sinh an toàn thực phẩm bất ngờ ghé quầy kiểm tra mẫu nước dùng và phát hiện gói phụ gia không rõ nguồn gốc cất dưới gầm tủ.',
     luaChon: [
@@ -1733,6 +1848,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan:
           'Thành khẩn nhận biên bản xử phạt, bồi thường viện phí cho khách và đóng cửa dọn dẹp làm lại đàng hoàng.',
         moTaHauQuaNgan: 'Mất gần hết tiền tích lũy, nhưng trút bỏ được gánh nặng day dứt lương tâm.',
+        khaiNiemKTCT: 'Chấp hành pháp luật & Chuẩn hóa giá trị sử dụng',
         tacDong: {
           tienMatDelta: -25000000,
           tinhThanDelta: 15,
@@ -1747,6 +1863,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_doi_dia_diem_ban_tiep',
         vanBan: 'Sang nhượng gấp đồ đạc, dời sang quận khác mở lại quầy mới để né tai tiếng.',
         moTaHauQuaNgan: 'Giữ được vốn liếng, mang theo vết xước âm ỉ không bao giờ nhắc lại.',
+        khaiNiemKTCT: 'Trốn tránh trách nhiệm & Khuyết tật thị trường',
         tacDong: {
           tienMatDelta: -5000000,
           tinhThanDelta: -25,
@@ -1764,6 +1881,7 @@ export const LIFE_SCENES: LifeScene[] = [
     tieuDe: 'Chiều buông bên hiên nhà',
     giaiDoanTuoi: [65, 75],
     trongSo: 12,
+    chuDeKTCT: 'Chương 1, 2, 3 · Tổng kết quy luật kinh tế chính trị đời người',
     vanBan:
       'Một buổi chiều gió mát, bạn ngồi trên chiếc ghế mây trước hiên nhà nhìn ra khoảng trời xanh ngát. Từng dòng người tấp nập tan tầm sau một ngày mưu sinh. Bạn nhớ lại những năm tháng tuổi mười tám đôi mươi, những quyết định sinh tử nơi ngã rẽ cuộc đời, những đồng vốn gom góp hay những đánh đổi khốc liệt và những con người đã đi qua đời mình.',
     luaChon: [
@@ -1771,6 +1889,7 @@ export const LIFE_SCENES: LifeScene[] = [
         id: 'opt_mung_vi_da_song_tron_ven',
         vanBan: 'Khẽ mỉm cười, lòng thanh thản vì đã sống một cuộc đời trung thực, kiên cường.',
         moTaHauQuaNgan: 'Khép lại một hành trình nhân sinh đầy ý nghĩa.',
+        khaiNiemKTCT: 'Bảo toàn nhân cách người lao động chân chính',
         tacDong: {
           tinhThanDelta: 30,
           quanHeDelta: 20,
@@ -1784,6 +1903,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Thở dài trước vòng xoáy danh vọng và kim tiền, trút bỏ được ảo vọng phù hoa sau cú ngã định mệnh.',
         moTaHauQuaNgan: 'Càng trèo cao ngã càng đau: trả giá đắt cho tham vọng, nhận ra giá trị cốt lõi của sự bình yên.',
         nhanDacBiet: 'Hồi tỉnh Sau Cú ngã',
+        khaiNiemKTCT: 'Bài học quy luật từ sự sụp đổ của tư bản giả',
         dieuKien: (state) => Boolean(state.flags['nga_ngua_trang_tay'] || state.flags['than_bai_danh_liet']),
         tacDong: {
           tinhThanDelta: 35,
@@ -1798,6 +1918,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Ngắm nhìn thế hệ học trò kế cận trưởng thành và những công trình chuyên môn để lại cho đời.',
         moTaHauQuaNgan: 'Di sản trí tuệ và phụng sự xã hội tiếp tục được tiếp nối rạng rỡ.',
         nhanDacBiet: 'Di sản Tri thức',
+        khaiNiemKTCT: 'Di sản lao động phức tạp và tri thức xã hội',
         dieuKien: (state) =>
           state.profile.xuatThan === 'tri_thuc_tinh_hoa' &&
           !state.flags['than_bai_danh_liet'] &&
@@ -1815,6 +1936,7 @@ export const LIFE_SCENES: LifeScene[] = [
         vanBan: 'Nhìn lại cơ ngơi nhà xưởng vững chãi và hàng trăm cuộc đời lao động đã cùng mình đồng hành.',
         moTaHauQuaNgan: 'Hoàn thành sứ mệnh của một nhà kiến tạo công nghiệp và dòng vốn.',
         nhanDacBiet: 'Thành quả Doanh nhân',
+        khaiNiemKTCT: 'Đóng góp tổ chức sản xuất và công ăn việc làm',
         dieuKien: (state) =>
           state.profile.xuatThan === 'doanh_nhan_thanh_dat' &&
           !state.flags['than_bai_danh_liet'] &&

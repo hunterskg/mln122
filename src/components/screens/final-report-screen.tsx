@@ -137,17 +137,26 @@ export function FinalReportScreen() {
                 {reflectionReport.moThucChinh.map((pat, idx) => (
                   <div
                     key={idx}
-                    className="p-4 bg-paper rounded-xl border border-rule-subtle space-y-2"
+                    className="p-4 bg-paper rounded-xl border border-rule-subtle space-y-2.5"
                   >
                     <div className="flex items-center justify-between gap-2 flex-wrap">
-                      <span className="font-bold text-sm text-amber-300">{pat.ten}</span>
+                      <span className="font-bold text-sm text-amber-300">{pat.ten.normalize('NFC')}</span>
                       <span className="text-[11px] text-muted font-mono italic">
-                        {pat.moTaNgan}
+                        {pat.moTaNgan.normalize('NFC')}
                       </span>
                     </div>
                     <p className="text-[13px] text-ink-2 leading-relaxed font-body">
-                      {pat.doanNhinLai}
+                      {pat.doanNhinLai.normalize('NFC')}
                     </p>
+                    <div className="pt-2 border-t border-rule-subtle/60 space-y-1">
+                      <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-indigo-950/60 border border-indigo-700/50 text-indigo-300 text-[10px] font-medium font-body">
+                        <BookOpen className="w-3 h-3 text-indigo-400 shrink-0" />
+                        <span>{pat.chuongGiaoTrinh.normalize('NFC')}</span>
+                      </span>
+                      <p className="text-[12px] text-muted italic leading-relaxed font-body">
+                        {pat.luanDiemGiaoTrinh.normalize('NFC')}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -165,13 +174,13 @@ export function FinalReportScreen() {
             </div>
 
             {/* Political Economy Lens */}
-            <div className="p-4 rounded-xl border border-rule-subtle bg-paper space-y-2 text-xs">
-              <div className="flex items-center gap-2 text-muted font-semibold uppercase tracking-wider text-[11px]">
+            <div className="p-4 rounded-xl border border-indigo-900/40 bg-paper space-y-2 text-xs">
+              <div className="flex items-center gap-2 text-indigo-300 font-semibold uppercase tracking-wider text-[11px]">
                 <BookOpen className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>Lăng kính Kinh tế chính trị Mác - Lênin</span>
+                <span>Đối chiếu Giáo trình Kinh tế chính trị Mác - Lênin (Bộ GD&ĐT)</span>
               </div>
-              <p className="text-ink-2 leading-relaxed text-[13px]">
-                {reflectionReport.gocKinhTeChinhTri}
+              <p className="text-ink-2 leading-relaxed text-[13px] whitespace-pre-line font-body">
+                {reflectionReport.gocKinhTeChinhTri.normalize('NFC')}
               </p>
             </div>
 

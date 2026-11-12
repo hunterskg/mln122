@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { LifeScene, LifeChoice } from '@/engine';
 import { Card, CardHeader, CardContent } from '@/components/ui/card';
 import { formatCurrency } from '@/lib/utils';
-import { ArrowRight, Heart, Brain, Users, Wallet, Clock, Sparkles } from 'lucide-react';
+import { ArrowRight, Heart, Brain, Users, Wallet, Clock, Sparkles, BookOpen } from 'lucide-react';
 
 interface EventModalProps {
   scene?: LifeScene;
@@ -96,6 +96,13 @@ export function EventModal({ scene, tuoi, onSelectChoice, event, selectedOptionI
               <span className='px-2.5 py-0.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-[11px] font-bold tracking-wide whitespace-nowrap'>
                 Năm {currentAge} tuổi · {getStageLabel(currentAge)}
               </span>
+
+              {scene.chuDeKTCT && (
+                <span className='inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-indigo-500/15 border border-indigo-500/35 text-indigo-300 text-[11px] font-medium tracking-wide whitespace-nowrap'>
+                  <BookOpen className='w-3 h-3 text-indigo-400 shrink-0' />
+                  <span>{scene.chuDeKTCT.normalize('NFC')}</span>
+                </span>
+              )}
             </div>
             <h2 className='text-2xl sm:text-3xl font-normal font-display text-ink tracking-tight'>
               {scene.tieuDe.normalize('NFC')}
@@ -143,11 +150,19 @@ export function EventModal({ scene, tuoi, onSelectChoice, event, selectedOptionI
                         {hotkey}
                       </span>
                       <div>
-                        {choice.nhanDacBiet && (
-                          <span className='inline-flex items-center gap-1 px-2 py-0.5 rounded bg-amber-500/15 border border-amber-500/35 text-amber-300 text-[10px] font-bold uppercase tracking-wider mb-1.5 font-body'>
-                            {choice.nhanDacBiet.normalize('NFC')}
-                          </span>
-                        )}
+                        <div className='flex items-center gap-1.5 flex-wrap mb-1.5'>
+                          {choice.nhanDacBiet && (
+                            <span className='inline-flex items-center gap-1 px-2 py-0.5 rounded bg-amber-500/15 border border-amber-500/35 text-amber-300 text-[10px] font-bold uppercase tracking-wider font-body'>
+                              {choice.nhanDacBiet.normalize('NFC')}
+                            </span>
+                          )}
+                          {choice.khaiNiemKTCT && (
+                            <span className='inline-flex items-center gap-1 px-2 py-0.5 rounded bg-indigo-950/70 border border-indigo-700/50 text-indigo-300 text-[10px] font-medium font-body'>
+                              <BookOpen className='w-2.5 h-2.5 text-indigo-400 shrink-0' />
+                              <span>{choice.khaiNiemKTCT.normalize('NFC')}</span>
+                            </span>
+                          )}
+                        </div>
                         <div className='text-base font-bold text-ink font-body group-hover:text-amber-200 transition-colors'>
                           {choice.vanBan.normalize('NFC')}
                         </div>

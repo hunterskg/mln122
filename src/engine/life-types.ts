@@ -40,6 +40,7 @@ export interface LifeChoice {
   moTaHauQuaNgan?: string;
   dieuKien?: (state: LifeState) => boolean;
   nhanDacBiet?: string;
+  khaiNiemKTCT?: string; // Khái niệm KTCT Mác - Lênin đối chiếu Giáo trình Bộ GD&ĐT
   tacDong: {
     tienMatDelta?: number;
     sucKhoeDelta?: number;
@@ -60,6 +61,7 @@ export interface LifeScene {
   dieuKien?: (state: LifeState) => boolean;
   trongSo: number;
   vanBan: string;
+  chuDeKTCT?: string; // Chương / Nguyên lý KTCT trong Giáo trình Bộ GD&ĐT
   luaChon: LifeChoice[];
 }
 
